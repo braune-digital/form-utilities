@@ -1,0 +1,24 @@
+<div class="radio input-radio {{ inputClass }}"
+     [formGroup]="inputFormGroup"
+     [ngClass]="{'has-error' : hasErrors() || remoteError, 'disabled': inputDisabled}">
+
+    <label>
+        <input type="radio"
+               name="{{ inputFormControlName }}"
+               formControlName="{{ inputFormControlName }}"
+               [attr.disabled]="inputDisabled ? '' : null"
+               [checked]="inputFormGroup.value[inputFormControlName] === inputValue ? true : false"
+               [value]="inputValue"
+        >
+        <div class="radioElement"></div>
+        <ng-content></ng-content>
+    </label>
+
+    <div class="invalid-feedback" *ngIf="hasErrors()">
+        {{ 'forms.errors.required' | translate }}
+    </div>
+    <div class="invalid-feedback" *ngIf="remoteError">
+        {{ remoteError }}
+    </div>
+</div>
+

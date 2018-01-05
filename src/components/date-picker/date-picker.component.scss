@@ -1,0 +1,20 @@
+/*!
+ * Braune Digital GmbH
+ * Author: Felix Baltruschat (fb@braune-digital.com)
+ */
+
+
+@import "../../../../../scss/variables";
+
+:host {
+
+    .form-group {
+        .input-group {
+            input {
+                padding-left: 40px;
+                background: url('/assets/images/calendar.png') no-repeat 10px 50%;
+            }
+        }
+    }
+
+}

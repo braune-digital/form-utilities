@@ -1,0 +1,26 @@
+<div class="form-group {{ inputClass }}"
+     [formGroup]="inputFormGroup"
+     [ngClass]="{'has-error' : hasErrors() || remoteError }">
+
+    <label class="text-small" *ngIf="inputLabel"><strong>{{ inputLabel | translate }}</strong></label>
+
+    <input [colorPicker]="color"
+           (colorPickerChange)="color=$event;handleColorChange($event)"
+           [style.background]="color"
+           [value]="color"
+           [attr.disabled]="inputDisabled?'':null"
+           formControlName="{{ inputFormControlName }}"
+           [cpOutputFormat]="'hex'"
+           class="form-control"
+           [vob]="vob" [vobSync]="vobSync" [vobAsync]="vobAsync" [vobUseTimeout]="vobUseTimeout" [vobWithOnPush]="vobWithOnPush"
+    />
+
+    <div class="invalid-feedback" *ngFor="let error of errors()">
+        {{ error | translate }}
+    </div>
+
+   <div class="invalid-feedback" *ngIf="remoteError">
+        {{ remoteError | translate }}
+    </div>
+</div>
+
