@@ -69,8 +69,7 @@ export class SelectComponent implements OnInit, OnDestroy {
     private paramFilterSelected: ParamFilter;
     private filterSelected: InFilter;
 
-    constructor(private api: ApiRequestService, private translateService: TranslateService) {
-    }
+    constructor(private api: ApiRequestService, private translateService: TranslateService) {}
 
     ngOnInit() {
         this.errorSubscription = this.api.propertyError.subscribe((error: any) => {
@@ -125,16 +124,13 @@ export class SelectComponent implements OnInit, OnDestroy {
                 } else {
                     text = accessor[this.filterPropertyLabel];
                 }
-
                 return { id: item[this.filterPropertyValue], text: text };
-
             };
 
         } else { // The data does not come from a remote source
 
             // If we have a plain array of values, create an array of objects with id and text property
             if (['number', 'string'].indexOf(typeof this.options[0]) >= 0) {
-
                 this.options = this.options.reduce((flat, toFlatten) => flat.concat({
                     [this.optionValue]: toFlatten.toString(),
                     [this.optionLabel]: toFlatten.toString()

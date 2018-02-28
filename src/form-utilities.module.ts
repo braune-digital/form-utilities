@@ -1,13 +1,13 @@
 import { CUSTOM_ELEMENTS_SCHEMA, ModuleWithProviders, NgModule, Provider } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
-import {ColorPickerModule} from 'ngx-color-picker';
+import { ColorPickerModule } from 'ngx-color-picker';
 import { FileUploadModule } from 'ng2-file-upload';
 import { TooltipModule } from 'ngx-bootstrap';
 
 import { ValidateOnBlurDirective } from './directives/validate-on-blur.directive';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiRequestService } from './utils/abstracts/abstract-api-request.service';
 import { ApiRequestServiceFaker } from './services/api-request-faker.service';
 import {
