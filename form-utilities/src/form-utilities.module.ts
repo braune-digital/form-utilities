@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { InputComponent } from './components/input/input.component';
 import { SelectDirective } from './directives/select/select.directive';
-import { ProgressButtonComponent } from './components/progress-button/progress-button.component';
 import { FormErrorService } from './services/form-error.service';
 import { FormErrorInterceptor } from './interceptors/form-error.interceptor';
+import { InputComponent } from './components/input/input.component';
+import { ProgressButtonComponent } from './components/progress-button/progress-button.component';
 
 @NgModule({
   imports: [

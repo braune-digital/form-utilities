@@ -1,7 +1,7 @@
 import { FormInputComponent } from '../form-input.component';
 import { ControlValueAccessor, DefaultValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { Component, forwardRef, ViewChild } from '@angular/core';
-import { FormErrorService } from '../../services';
+import { Component, forwardRef, OnInit, ViewChild } from '@angular/core';
+import { FormErrorService } from '../../services/form-error.service';
 
 @Component({
   moduleId: module.id,
@@ -14,11 +14,15 @@ import { FormErrorService } from '../../services';
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss']
 })
-export class InputComponent extends FormInputComponent implements ControlValueAccessor {
+export class InputComponent extends FormInputComponent implements OnInit, ControlValueAccessor {
   @ViewChild(DefaultValueAccessor)
   input: DefaultValueAccessor;
 
   constructor(public formErrorService: FormErrorService) {
     super();
+  }
+
+  ngOnInit(): void {
+    super.ngOnInit();
   }
 }

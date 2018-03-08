@@ -1,7 +1,7 @@
 import { Input, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormControl } from '@angular/forms';
-import { FormErrorService } from '../services';
 import { Subscription } from 'rxjs/Subscription';
+import { FormErrorService } from '../services/form-error.service';
 
 export abstract class FormInputComponent implements OnInit, OnDestroy, ControlValueAccessor {
 

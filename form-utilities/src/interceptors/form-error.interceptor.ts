@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import 'rxjs/add/operator/do';
 import { Observable } from 'rxjs/Observable';
-import { FormErrorService } from '../services';
+import { FormErrorService } from '../services/form-error.service';
 
 @Injectable()
 export class FormErrorInterceptor implements HttpInterceptor {
