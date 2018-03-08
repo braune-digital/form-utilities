@@ -1,14 +1,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "outDir": "./dist/out-tsc",
     "sourceMap": true,
-    "declaration": true,
+    "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "noImplicitAny": true,
-    "removeComments": true,
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -16,13 +15,5 @@
       "es2017",
       "dom"
     ]
-  },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "compiled"
-  ],
-  "angularCompilerOptions": {
-    "strictMetadataEmit": true
   }
 }
