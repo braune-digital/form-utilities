@@ -3,6 +3,7 @@
   "version": "1.0.0-alpha.2",
   "repository": "https://github.com/braune-digital/form-utilities.git",
   "author": "Jannik <jc@braune-digital.com>",
+  "description": "Custom components to use in angular projects. All components are aware of form-errors when using symfony forms.",
   "license": "MIT",
   "dependencies": {
     "@ng-select/ng-select": "^0.24.0"
