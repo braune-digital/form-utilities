@@ -1,0 +1,23 @@
+{
+  "name": "@braune-digital/form-utilities",
+  "version": "1.0.0-alpha.0",
+  "repository": "https://github.com/braune-digital/form-utilities.git",
+  "author": "Jannik <jc@braune-digital.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@ng-select/ng-select": "^0.24.0"
+  },
+  "peerDependencies": {
+    "@angular/core": "^5.2.0",
+    "@angular/common": "^5.2.0"
+  },
+  "ngPackage": {
+    "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+    "workingDirectory": "../.ng_build",
+    "lib": {
+      "entryFile": "src/public_api.ts"
+    },
+    "dest": "../dist/form-utilities"
+  }
+}
