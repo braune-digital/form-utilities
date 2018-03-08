@@ -1,3 +1,8 @@
+$btn-min-width: 150px !default;
+$btn-min-height: 40px !default;
+$btn-line-height: 16px !default;
+$margin-base: 10px !default;
+
 :host {
   .button-progress {
     padding: 0;
