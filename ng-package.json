@@ -4,6 +4,6 @@
   "dest": "dist/form-utilities",
   "workingDirectory": ".ng_build",
   "lib": {
-    "entryFile": "form-utilities/src/public_api.ts"
+    "entryFile": "form-utilities/src/index.ts"
   }
 }

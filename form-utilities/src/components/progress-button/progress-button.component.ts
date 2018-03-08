@@ -8,7 +8,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ProgressButtonComponent {
 
-
   @Input('buttonClass') buttonClass = 'btn-primary';
   @Input('buttonType') buttonType = 'submit';
   @Input('buttonLoading') buttonLoading = false;

@@ -41,6 +41,6 @@ export class BDFormUtilitiesModule {
           multi: true
         }
       ]
-    }
+    };
   }
 }

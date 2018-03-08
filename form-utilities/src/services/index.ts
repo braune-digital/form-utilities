@@ -1,1 +1,1 @@
-export * from './form-error.service'
+export * from './form-error.service';

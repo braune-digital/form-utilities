@@ -1,1 +1,1 @@
-export * from './select/select.directive'
+export * from './select/select.directive';

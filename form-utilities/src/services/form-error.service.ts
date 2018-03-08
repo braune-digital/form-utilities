@@ -3,5 +3,5 @@ import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class FormErrorService {
-    public propertyError = new Subject<{ property_path: string, message: string }>();
+  public propertyError = new Subject<{ property_path: string, message: string }>();
 }

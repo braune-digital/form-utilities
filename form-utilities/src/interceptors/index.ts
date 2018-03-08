@@ -1,1 +1,1 @@
-export * from './form-error.interceptor'
+export * from './form-error.interceptor';
