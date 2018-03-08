@@ -2,12 +2,13 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { InputComponent, ProgressButtonComponent } from './components';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FormErrorInterceptor } from './interceptors';
-import { FormErrorService } from './services';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { SelectDirective } from './directives';
+import { InputComponent } from './components/input/input.component';
+import { SelectDirective } from './directives/select/select.directive';
+import { ProgressButtonComponent } from './components/progress-button/progress-button.component';
+import { FormErrorService } from './services/form-error.service';
+import { FormErrorInterceptor } from './interceptors/form-error.interceptor';
 
 @NgModule({
   imports: [
@@ -29,10 +30,10 @@ import { SelectDirective } from './directives';
     ProgressButtonComponent
   ],
 })
-export class BDFormUtilitiesModule {
+export class FormUtilitiesModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: BDFormUtilitiesModule,
+      ngModule: FormUtilitiesModule,
       providers: [
         FormErrorService,
         {
