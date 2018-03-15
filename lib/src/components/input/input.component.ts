@@ -22,6 +22,9 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
   label: string;
 
   @Input()
+  type = 'text';
+
+  @Input()
   placeholder: string;
 
   @Input()
