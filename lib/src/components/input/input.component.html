@@ -2,3 +2,7 @@
   <label class="text-small" *ngIf="label"><strong>{{ label }}</strong></label>
   <input [type]="type" class="form-control" ngDefaultControl [placeholder]="placeholder">
 </div>
+
+<span class="help-block" *ngFor="let error of errors">
+  {{ error }}
+</span>
