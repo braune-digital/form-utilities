@@ -41,7 +41,11 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   }
 
   writeValue(value: any): void {
-    this.input.writeValue(value);
+    if (value) {
+      this.input.writeValue(value);
+    } else {
+      this.input.writeValue(null);
+    }
   }
 
   registerOnChange(fn: (_: any) => void): void {
