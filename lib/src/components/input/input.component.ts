@@ -25,7 +25,7 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
   type = 'text';
 
   @Input()
-  placeholder: string;
+  placeholder: string = '';
 
   @Input()
   disableErrors = false;
