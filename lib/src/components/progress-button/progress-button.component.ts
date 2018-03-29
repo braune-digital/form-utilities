@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -8,21 +8,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ProgressButtonComponent {
 
-  @Input('buttonClass') buttonClass = 'btn-primary';
-  @Input('buttonType') buttonType = 'submit';
-  @Input('buttonLoading') buttonLoading = false;
-  @Input('buttonSuccess') buttonSuccess = false;
-  @Input('buttonDisabled') buttonDisabled = false;
-  @Input('formErrors') formErrors: Array<any> = [];
-
-  @Output() buttonOnSubmit: EventEmitter<any> = new EventEmitter();
-
-  constructor() {
-  }
-
-
-  onSubmit(): void {
-    this.buttonOnSubmit.emit(true);
-  }
+  @Input() btnClass = 'btn-primary';
+  @Input() btnType = 'button';
+  @Input() btnStateLoading = false;
+  @Input() btnStateSuccess = false;
+  @Input() btnDisabled = false;
 
 }
