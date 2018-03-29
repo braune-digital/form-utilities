@@ -1,0 +1,8 @@
+<div class="form-group">
+  <label class="text-small" *ngIf="label"><strong>{{ label }}</strong></label>
+  <textarea class="form-control" ngDefaultControl [placeholder]="placeholder"></textarea>
+</div>
+
+<span class="help-block" *ngFor="let error of errors">
+  {{ error }}
+</span>

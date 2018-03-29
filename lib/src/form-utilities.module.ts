@@ -9,6 +9,7 @@ import { FormErrorService } from './services/form-error.service';
 import { FormErrorInterceptor } from './interceptors/form-error.interceptor';
 import { InputComponent } from './components/input/input.component';
 import { ProgressButtonComponent } from './components/progress-button/progress-button.component';
+import { TextareaComponent } from './components/textarea/textarea.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { ProgressButtonComponent } from './components/progress-button/progress-b
   ],
   declarations: [
     InputComponent,
+    TextareaComponent,
     SelectDirective,
     ProgressButtonComponent
   ],
@@ -26,6 +28,7 @@ import { ProgressButtonComponent } from './components/progress-button/progress-b
     NgSelectModule,
 
     InputComponent,
+    TextareaComponent,
     SelectDirective,
     ProgressButtonComponent
   ],
