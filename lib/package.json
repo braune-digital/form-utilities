@@ -1,18 +1,16 @@
 {
   "$schema": "../node_modules/ng-packagr/package.schema.json",
   "name": "@braune-digital/form-utilities",
-  "version": "1.0.0-alpha.14",
+  "version": "1.0.0-alpha.15",
   "description": "Custom components to use in angular projects. All components are aware of form-errors when using symfony forms.",
   "author": "Jannik <jc@braune-digital.com>",
   "license": "GNU",
   "repository": "git@github.com:braune-digital/form-utilities.git",
-  "dependencies": {
-    "@ng-select/ng-select": "^0.24.0"
-  },
   "peerDependencies": {
     "@angular/core": "^5.2.0",
     "@angular/common": "^5.2.0",
-    "@angular/forms": "^5.2.0"
+    "@angular/forms": "^5.2.0",
+    "@ng-select/ng-select": "^2.0.0"
   },
   "ngPackage": {
     "lib": {
