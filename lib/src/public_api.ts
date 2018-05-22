@@ -6,5 +6,8 @@ export { ProgressButtonComponent } from './components/progress-button/progress-b
 // Directives
 export { SelectDirective } from './directives/select/select.directive';
 
+// Service
+export { FormErrorService } from './services/form-error.service';
+
 // Module
 export { FormUtilitiesModule } from './form-utilities.module';
