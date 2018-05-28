@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { FormUtilitiesModule } from '../../lib/src/form-utilities.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CKEditorModule } from 'ng2-ckeditor';
 
 
 @NgModule({
@@ -10,7 +13,11 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    CKEditorModule,
+    ReactiveFormsModule,
+    FormUtilitiesModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
