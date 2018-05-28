@@ -1,0 +1,14 @@
+<div class="form-group">
+  <label class="text-small" *ngIf="label">{{ label }}</label>
+
+    <ckeditor
+      ngDefaultControl
+      [config]="ckeditorConfig"
+      (change)="onEditorChange($event)"
+    >
+    </ckeditor>
+</div>
+
+<span class="help-block" *ngFor="let error of errors">
+  {{ error }}
+</span>

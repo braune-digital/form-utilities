@@ -10,17 +10,22 @@ import { FormErrorInterceptor } from './interceptors/form-error.interceptor';
 import { InputComponent } from './components/input/input.component';
 import { ProgressButtonComponent } from './components/progress-button/progress-button.component';
 import { TextareaComponent } from './components/textarea/textarea.component';
+import { CKEditorModule } from 'ng2-ckeditor';
+import { CkeditorComponent } from './components/ckeditor/ckeditor.component';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    NgSelectModule
+    NgSelectModule,
+    CKEditorModule
   ],
   declarations: [
     InputComponent,
     TextareaComponent,
+    CkeditorComponent,
     SelectDirective,
     ProgressButtonComponent
   ],
@@ -29,6 +34,7 @@ import { TextareaComponent } from './components/textarea/textarea.component';
 
     InputComponent,
     TextareaComponent,
+    CkeditorComponent,
     SelectDirective,
     ProgressButtonComponent
   ],
