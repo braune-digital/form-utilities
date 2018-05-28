@@ -28,10 +28,12 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
       // todo - @Jannik - do not set this on every control
       // todo - Maybe use a custom formBuilder and register the parent form on the formErrorService
       // todo - For performance use onPush-strategy if above solution is not yet implemented
-      const control = this.formControl.root.get(error.property_path);
-      const errorKey = this.getErrorKey(error.property_path);
-      if (!control.hasError(errorKey)) {
-        control.setErrors({...control.errors, [errorKey]: error.message});
+      if (this.formControl.root) {
+        const control = this.formControl.root.get(error.property_path);
+        const errorKey = this.getErrorKey(error.property_path);
+        if (!control.hasError(errorKey)) {
+          control.setErrors({...control.errors, [errorKey]: error.message});
+        }
       }
     });
   }
