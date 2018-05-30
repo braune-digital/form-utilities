@@ -18,8 +18,7 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   formErrorServiceSubscription: Subscription;
 
   get errors(): Array<string> {
-    return [];
-    // return this.formControl.errors ? Object.keys(this.formControl.errors).map((key, _, arr) => arr[key]) : [];
+    return (this.formControl && this.formControl.errors) ? Object.keys(this.formControl.errors).map(key => this.formControl.errors[key]) : [];
   }
 
   ngOnInit(): void {
