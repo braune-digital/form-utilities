@@ -12,7 +12,7 @@ import { ProgressButtonComponent } from './components/progress-button/progress-b
 import { TextareaComponent } from './components/textarea/textarea.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { CkeditorComponent } from './components/ckeditor/ckeditor.component';
-
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -20,7 +20,8 @@ import { CkeditorComponent } from './components/ckeditor/ckeditor.component';
     FormsModule,
     ReactiveFormsModule,
     NgSelectModule,
-    CKEditorModule
+    CKEditorModule,
+    TranslateModule,
   ],
   declarations: [
     InputComponent,

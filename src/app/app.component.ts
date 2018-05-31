@@ -15,7 +15,7 @@ export class AppComponent {
     this.form = this._builder.group({
       'descriptionCk': ['<p>CkEditor</p>', Validators.required],
       'descriptionTextarea': ['Textarea', Validators.required],
-      'input': ['input', Validators.required]
+      'input': ['', Validators.required]
     });
   }
 }

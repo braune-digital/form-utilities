@@ -3,6 +3,6 @@
   <textarea class="form-control" ngDefaultControl [placeholder]="placeholder"></textarea>
 </div>
 
-<span class="help-block" *ngFor="let error of errors">
-  {{ error }}
+<span class="help-block form-error" *ngFor="let error of errors">
+  {{ error | translate }}
 </span>

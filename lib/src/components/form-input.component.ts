@@ -6,6 +6,7 @@ import { FormErrorService } from '../services/form-error.service';
 export abstract class FormInputComponent implements OnInit, OnDestroy, ControlValueAccessor {
 
   static readonly REMOTE_ERROR_PREFIX = 'remote_';
+  static readonly ERROR_PREFIX = 'form.errors';
 
   abstract input: ControlValueAccessor;
   abstract formErrorService: FormErrorService;
@@ -18,7 +19,8 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   formErrorServiceSubscription: Subscription;
 
   get errors(): Array<string> {
-    return (this.formControl && this.formControl.errors) ? Object.keys(this.formControl.errors).map(key => this.formControl.errors[key]) : [];
+    if(this.formControl.pristine) return [];
+    return (this.formControl && this.formControl.errors) ? Object.keys(this.formControl.errors).map(key => FormInputComponent.ERROR_PREFIX + '.'+ key) : [];
   }
 
   ngOnInit(): void {

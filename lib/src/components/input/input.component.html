@@ -1,8 +1,8 @@
 <div class="form-group">
   <label class="text-small" *ngIf="label">{{ label }}</label>
   <input [type]="type" class="form-control" ngDefaultControl [placeholder]="placeholder">
-</div>
 
-<span class="help-block" *ngFor="let error of errors">
-  {{ error }}
-</span>
+  <span class="help-block form-error" *ngFor="let error of errors">
+    {{ error }}
+  </span>
+</div>
