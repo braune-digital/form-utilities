@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/ng-packagr/package.schema.json",
   "name": "@braune-digital/form-utilities",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "Custom components to use in angular projects. All components are aware of form-errors when using symfony forms.",
   "author": "Jannik <jc@braune-digital.com>",
   "license": "GNU",
@@ -11,7 +11,8 @@
     "@angular/common": "^5.2.0",
     "@angular/forms": "^5.2.0",
     "@ng-select/ng-select": "^2.0.0",
-    "ng2-ckeditor": "^1.1.4"
+    "ng2-ckeditor": "^1.1.4",
+    "@ngx-translate/core": "^9.1.1"
   },
   "ngPackage": {
     "lib": {
