@@ -3,6 +3,6 @@
   <input [type]="type" class="form-control" ngDefaultControl [placeholder]="placeholder">
 
   <span class="help-block form-error" *ngFor="let error of errors">
-    {{ error }}
+    {{ error | translate }}
   </span>
 </div>
