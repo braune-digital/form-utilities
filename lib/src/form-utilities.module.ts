@@ -14,6 +14,10 @@ import { CKEditorModule } from 'ng2-ckeditor';
 import { CkeditorComponent } from './components/ckeditor/ckeditor.component';
 import { TranslateModule } from '@ngx-translate/core';
 
+export interface FormUtilitiesOptions {
+  displayErrors: boolean
+}
+
 @NgModule({
   imports: [
     CommonModule,
@@ -41,11 +45,12 @@ import { TranslateModule } from '@ngx-translate/core';
   ],
 })
 export class FormUtilitiesModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(options:FormUtilitiesOptions = { displayErrors: false}): ModuleWithProviders {
     return {
       ngModule: FormUtilitiesModule,
       providers: [
         FormErrorService,
+        {provide: 'options', useValue: options},
         {
           provide: HTTP_INTERCEPTORS,
           useClass: FormErrorInterceptor,

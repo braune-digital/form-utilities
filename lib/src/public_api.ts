@@ -12,3 +12,6 @@ export { FormErrorService } from './services/form-error.service';
 
 // Module
 export { FormUtilitiesModule } from './form-utilities.module';
+
+// Validators
+export { isEmail } from './validators/isEmail.validator';

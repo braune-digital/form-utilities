@@ -1,7 +1,8 @@
 import { FormInputComponent } from '../form-input.component';
 import { ControlValueAccessor, DefaultValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { Component, forwardRef, Input, ViewChild } from '@angular/core';
+import { Component, forwardRef, Inject, Input, ViewChild } from '@angular/core';
 import { FormErrorService } from '../../services/form-error.service';
+import { FormUtilitiesOptions } from '../../form-utilities.module';
 
 @Component({
   moduleId: module.id,
@@ -30,7 +31,7 @@ export class TextareaComponent extends FormInputComponent implements ControlValu
   @Input()
   formControl: FormControl;
 
-  constructor(public formErrorService: FormErrorService) {
-    super();
+  constructor(@Inject('options') private options:FormUtilitiesOptions, public formErrorService: FormErrorService) {
+    super(options);
   }
 }

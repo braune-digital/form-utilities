@@ -1,7 +1,8 @@
-import { Input, OnDestroy, OnInit } from '@angular/core';
+import { Inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 import { FormErrorService } from '../services/form-error.service';
+import { FormUtilitiesOptions } from '../form-utilities.module';
 
 export abstract class FormInputComponent implements OnInit, OnDestroy, ControlValueAccessor {
 
@@ -20,10 +21,19 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   @Input() displayErrors = true;
 
   get errors(): Array<string> {
-    if (this.displayErrors && this.formControl && !this.formControl.pristine && this.formControl.errors) {
+    if (
+        ((this._options.displayErrors || this.displayErrors) || this.displayErrors)
+      && this.formControl
+      && !this.formControl.pristine
+      && this.formControl.errors
+    ) {
       return Object.keys(this.formControl.errors).map(key => FormInputComponent.ERROR_PREFIX + '.' + key);
     }
     return [];
+  }
+
+
+  protected constructor(@Inject('options') private _options:FormUtilitiesOptions) {
   }
 
   ngOnInit(): void {
