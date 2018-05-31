@@ -1,4 +1,4 @@
-import { OnDestroy, OnInit } from '@angular/core';
+import { Input, OnDestroy, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 import { FormErrorService } from '../services/form-error.service';
@@ -13,14 +13,17 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
 
   abstract label: string;
   abstract placeholder: string;
-  abstract disableErrors = false;
   abstract formControl: FormControl;
 
   formErrorServiceSubscription: Subscription;
 
+  @Input() displayErrors = true;
+
   get errors(): Array<string> {
-    if(this.formControl.pristine) return [];
-    return (this.formControl && this.formControl.errors) ? Object.keys(this.formControl.errors).map(key => FormInputComponent.ERROR_PREFIX + '.'+ key) : [];
+    if (this.displayErrors && this.formControl && !this.formControl.pristine && this.formControl.errors) {
+      return Object.keys(this.formControl.errors).map(key => FormInputComponent.ERROR_PREFIX + '.' + key);
+    }
+    return [];
   }
 
   ngOnInit(): void {

@@ -22,7 +22,7 @@ export class TextareaComponent extends FormInputComponent implements ControlValu
   label: string;
 
   @Input()
-  placeholder: string = '';
+  placeholder = '';
 
   @Input()
   disableErrors = false;
