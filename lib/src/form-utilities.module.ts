@@ -13,6 +13,9 @@ import { TextareaComponent } from './components/textarea/textarea.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { CkeditorComponent } from './components/ckeditor/ckeditor.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { DatepickerComponent } from './components/datepicker/datepicker.component';
+import { DaterangeComponent } from './components/daterange/daterange.component';
 
 export interface FormUtilitiesOptions {
   displayErrors: boolean
@@ -26,9 +29,12 @@ export interface FormUtilitiesOptions {
     NgSelectModule,
     CKEditorModule,
     TranslateModule,
+    BsDatepickerModule.forRoot()
   ],
   declarations: [
     InputComponent,
+    DatepickerComponent,
+    DaterangeComponent,
     TextareaComponent,
     CkeditorComponent,
     SelectDirective,
@@ -38,6 +44,8 @@ export interface FormUtilitiesOptions {
     NgSelectModule,
 
     InputComponent,
+    DatepickerComponent,
+    DaterangeComponent,
     TextareaComponent,
     CkeditorComponent,
     SelectDirective,

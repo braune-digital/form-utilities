@@ -1,0 +1,17 @@
+<div class="form-group">
+  <label class="text-small" *ngIf="label">{{ label }}</label>
+  <input #dp
+         type="text"
+         class="form-control"
+         bsDatepicker
+         [bsConfig]="bsConfig"
+         [formControl]="formControl"
+         [placeholder]="placeholder"
+         [minDate]="bsMinDate"
+         [maxDate]="bsMaxDate"
+  >
+
+  <span class="help-block form-error" *ngFor="let error of errors">
+    {{ error | translate }}
+  </span>
+</div>

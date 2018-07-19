@@ -1,10 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div>
+<div style="width: 800px; margin: 0 auto;">
   <h1>Components Test</h1>
   <form [formGroup]="form">
     <bd-ckeditor [formControl]="form.get('descriptionCk')"></bd-ckeditor>
     <bd-textarea [formControl]="form.get('descriptionTextarea')"></bd-textarea>
     <bd-input [formControl]="form.get('input')"></bd-input>
+    <bd-datepicker [formControl]="form.get('datepicker')"></bd-datepicker>
+    <bd-daterange [formControl]="form.get('daterange')"></bd-daterange>
     <bd-progress-button [btnDisabled]="form.invalid" type="submit">Button submit</bd-progress-button>
   </form>
 </div>
