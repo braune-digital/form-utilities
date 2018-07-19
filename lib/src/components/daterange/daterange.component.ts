@@ -53,6 +53,7 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
   }
 
   ngOnInit() {
+    super.ngOnInit();
     this.langService.use(this.bsLang);
   }
 }
