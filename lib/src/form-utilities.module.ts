@@ -45,7 +45,7 @@ export interface FormUtilitiesOptions {
   ],
 })
 export class FormUtilitiesModule {
-  static forRoot(options:FormUtilitiesOptions = { displayErrors: false}): ModuleWithProviders {
+  static forRoot(options: FormUtilitiesOptions = {displayErrors: true}): ModuleWithProviders {
     return {
       ngModule: FormUtilitiesModule,
       providers: [

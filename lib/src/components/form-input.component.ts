@@ -18,11 +18,11 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
 
   formErrorServiceSubscription: Subscription;
 
-  @Input() displayErrors = true;
+  @Input() displayErrors = false;
 
   get errors(): Array<string> {
     if (
-        ((this._options.displayErrors || this.displayErrors) || this.displayErrors)
+      (this._options.displayErrors || this.displayErrors)
       && this.formControl
       && !this.formControl.pristine
       && this.formControl.errors
@@ -33,7 +33,7 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   }
 
 
-  protected constructor(@Inject('options') private _options:FormUtilitiesOptions) {
+  protected constructor(@Inject('options') private _options: FormUtilitiesOptions) {
   }
 
   ngOnInit(): void {
