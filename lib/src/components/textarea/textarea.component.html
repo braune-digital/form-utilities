@@ -1,11 +1,6 @@
 <div class="form-group">
   <label class="text-small" *ngIf="label">{{ label }}</label>
-  <ng-container *ngIf="autosize">
-    <textarea autosize class="form-control" ngDefaultControl [placeholder]="placeholder"></textarea>
-  </ng-container>
-  <ng-container *ngIf="!autosize">
-    <textarea class="form-control" ngDefaultControl [placeholder]="placeholder"></textarea>
-  </ng-container>
+  <textarea autosize class="form-control" ngDefaultControl [placeholder]="placeholder"></textarea>
 </div>
 
 <span class="help-block form-error" *ngFor="let error of errors">
