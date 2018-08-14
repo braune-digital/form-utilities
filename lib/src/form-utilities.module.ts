@@ -16,7 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
 import { DaterangeComponent } from './components/daterange/daterange.component';
-import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
+import {TextareaAutosizeModule} from 'ngx-textarea-autosize';
 
 export interface FormUtilitiesOptions {
   displayErrors: boolean
