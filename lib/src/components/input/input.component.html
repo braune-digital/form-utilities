@@ -1,6 +1,14 @@
 <div class="form-group">
   <label class="text-small" *ngIf="label">{{ label }}</label>
-  <input [type]="type" class="form-control" ngDefaultControl [placeholder]="placeholder">
+  <ng-container [ngSwitch]="type">
+    <ng-container *ngSwitchCase="'number'">
+      <input [type]="type" [step]="step" class="form-control" ngDefaultControl [placeholder]="placeholder">
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+      <input [type]="type" class="form-control" ngDefaultControl [placeholder]="placeholder">
+    </ng-container>
+  </ng-container>
+
 
   <span class="help-block form-error" *ngFor="let error of errors">
     {{ error | translate }}
