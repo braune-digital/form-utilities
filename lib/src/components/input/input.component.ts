@@ -1,6 +1,6 @@
 import { FormInputComponent } from '../form-input.component';
 import { ControlValueAccessor, DefaultValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { Component, forwardRef, Inject, Input, ViewChild } from '@angular/core';
+import {Component, EventEmitter, forwardRef, Inject, Input, Output, ViewChild} from '@angular/core';
 import { FormErrorService } from '../../services/form-error.service';
 import { FormUtilitiesOptions } from '../../form-utilities.module';
 
@@ -35,9 +35,33 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
   disableErrors = false;
 
   @Input()
+  disabled = false;
+
+  @Input()
   formControl: FormControl;
+
+  @Output()
+  onInputKeypress: EventEmitter<string> = new EventEmitter();
+
+  @Output()
+  onInputChange: EventEmitter<string> = new EventEmitter();
+
+  @Output()
+  onInputKeyup: EventEmitter<string> = new EventEmitter();
 
   constructor(@Inject('options') private options:FormUtilitiesOptions, public formErrorService: FormErrorService) {
     super(options);
+  }
+
+  handleOnInputKeypress(value: string): void {
+    this.onInputKeypress.emit(value);
+  }
+
+  handleOnInputChange(value: string): void {
+    this.onInputChange.emit(value);
+  }
+
+  handleOnInputKeyup(value: string): void {
+    this.onInputKeyup.emit(value);
   }
 }

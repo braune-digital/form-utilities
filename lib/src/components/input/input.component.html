@@ -1,6 +1,6 @@
 <div class="form-group">
   <label class="text-small" *ngIf="label">{{ label }}</label>
-  <input [type]="type" [step]="step" class="form-control" ngDefaultControl [placeholder]="placeholder">
+  <input [disabled]="disabled" [type]="type" [step]="step" class="form-control" (change)="handleOnInputChange($event.target.value)" (keypress)="handleOnInputKeypress($event.target.value)" (keyup)="handleOnInputKeyup($event.target.value)" ngDefaultControl [placeholder]="placeholder">
   <span class="help-block form-error" *ngFor="let error of errors">
     {{ error | translate }}
   </span>
