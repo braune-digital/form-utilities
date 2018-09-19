@@ -9,6 +9,8 @@
     </ckeditor>
 </div>
 
-<span class="help-block form-error" *ngFor="let error of errors">
-  {{ error | translate }}
-</span>
+<ul class="form-errors" *ngIf="errors.length">
+  <li class="form-errors__label" *ngFor="let error of errors">
+    {{ error | translate }}
+  </li>
+</ul>

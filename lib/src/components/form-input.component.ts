@@ -18,16 +18,25 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
 
   formErrorServiceSubscription: Subscription;
 
-  @Input() displayErrors = false;
+  @Input()
+  public displayErrors = false;
 
   get errors(): Array<string> {
+    let errors = [];
     if (
       (this._options.displayErrors || this.displayErrors)
       && this.formControl
       && !this.formControl.pristine
+      && this.formControl.touched
       && this.formControl.errors
     ) {
-      return Object.keys(this.formControl.errors).map(key => FormInputComponent.ERROR_PREFIX + '.' + key);
+      return Object.keys(this.formControl.errors).map(key => {
+        // If error is a remote error take the message directly
+        if (key.substr(0, FormInputComponent.REMOTE_ERROR_PREFIX.length) == FormInputComponent.REMOTE_ERROR_PREFIX) {
+          return this.formControl.errors[key];
+        }
+        return FormInputComponent.ERROR_PREFIX + '.' + key;
+      });
     }
     return [];
   }
@@ -45,7 +54,7 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
       if (this.formControl && this.formControl.root) {
         const control = this.formControl.root.get(error.property_path);
         const errorKey = this.getErrorKey(error.property_path);
-        if (!control.hasError(errorKey)) {
+        if (control && !control.hasError(errorKey)) {
           control.setErrors({...control.errors, [errorKey]: error.message});
         }
       }
