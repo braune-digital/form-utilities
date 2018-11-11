@@ -2,7 +2,7 @@
 	<label class="text-small" *ngIf="label">{{ label }}</label>
 	<input [disabled]="disabled" [type]="type" [step]="step" class="form-control"
 		   (change)="handleOnInputChange($event.target.value)" (keypress)="handleOnInputKeypress($event.target.value)"
-		   (keyup)="handleOnInputKeyup($event.target.value)" ngDefaultControl [placeholder]="placeholder">
+		   (keyup)="handleOnInputKeyup($event.target.value)" ngDefaultControl [(ngModel)]="formControl.value">
 	<ul class="form-errors" *ngIf="errors.length">
 		<li class="form-errors__label" *ngFor="let error of errors">
 			{{ error | translate }}
