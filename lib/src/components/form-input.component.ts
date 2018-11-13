@@ -42,7 +42,7 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   }
 
 
-  protected constructor(@Inject('options') private _options: FormUtilitiesOptions) {
+  protected constructor(@Inject('options') protected _options: FormUtilitiesOptions) {
   }
 
   ngOnInit(): void {
