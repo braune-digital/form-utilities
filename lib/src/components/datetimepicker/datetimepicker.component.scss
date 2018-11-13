@@ -1,0 +1,11 @@
+:host {
+    ::ng-deep {
+        timepicker {
+            margin-top: -18px;
+            .btn {
+                min-width: 0;
+                padding: 0;
+            }
+        }
+    }
+}

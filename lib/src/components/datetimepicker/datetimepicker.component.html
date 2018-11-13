@@ -1,0 +1,33 @@
+<div class="form-group">
+  <label class="text-small" *ngIf="label">{{ label }}</label>
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <input #dp
+             type="text"
+             class="form-control"
+             bsDatepicker
+             [bsConfig]="bsConfig"
+             [placeholder]="placeholder"
+             [minDate]="bsMinDate"
+             [maxDate]="bsMaxDate"
+             [bsValue]="dateTime.date"
+             [(ngModel)]="dateTime.date"
+             [disabled]="isDisabled"
+             (ngModelChange)="onDateChange($event)"
+      />
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <timepicker
+              [(ngModel)]="dateTime.time"
+              (ngModelChange)="onTimeChange($event)"
+              [showMeridian]="isMeridian"
+              [readonlyInput]="isDisabled"
+      ></timepicker>
+    </div>
+  </div>
+  <ul class="form-errors" *ngIf="errors.length">
+    <li class="form-errors__label" *ngFor="let error of errors">
+      {{ error | translate }}
+    </li>
+  </ul>
+</div>

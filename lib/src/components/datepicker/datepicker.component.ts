@@ -31,6 +31,9 @@ export class DatepickerComponent extends FormInputComponent implements ControlVa
   disableErrors = false;
 
   @Input()
+  bsValue: Date;
+
+  @Input()
   formControl: FormControl;
 
   @Input()
