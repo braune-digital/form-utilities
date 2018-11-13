@@ -1,7 +1,10 @@
 :host {
+    timepicker {
+        margin-top: -18px;
+        display: block;
+    }
     ::ng-deep {
         timepicker {
-            margin-top: -18px;
             .btn {
                 min-width: 0;
                 padding: 0;
