@@ -20,9 +20,17 @@ import {TextareaAutosizeModule} from 'ngx-textarea-autosize';
 import {CheckboxComponent} from './components/checkbox/checkbox.component';
 import {DatetimepickerComponent} from './components/datetimepicker/datetimepicker.component';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import {FormLabelComponent} from './components/form-label/form-label.component';
+import {FormErrorsComponent} from './components/form-errors/form-errors.component';
+import {FormHelpComponent} from './components/form-help/form-help.component';
 
 export interface FormUtilitiesOptions {
-  displayErrors: boolean
+  displayErrors: boolean;
+  classFormGroup?: string;
+  classFormControl?: string;
+  classFormLabel?: string;
+  classFormError?: string;
+  classFormHelp?: string;
 }
 
 @NgModule({
@@ -34,7 +42,7 @@ export interface FormUtilitiesOptions {
     CKEditorModule,
     TranslateModule,
     BsDatepickerModule.forRoot(),
-		TextareaAutosizeModule,
+    TextareaAutosizeModule,
     TimepickerModule.forRoot()
   ],
   declarations: [
@@ -46,7 +54,10 @@ export interface FormUtilitiesOptions {
     SelectDirective,
     ProgressButtonComponent,
     CheckboxComponent,
-    DatetimepickerComponent
+    DatetimepickerComponent,
+    FormLabelComponent,
+    FormErrorsComponent,
+    FormHelpComponent,
   ],
   exports: [
     NgSelectModule,
@@ -58,11 +69,25 @@ export interface FormUtilitiesOptions {
     SelectDirective,
     ProgressButtonComponent,
     CheckboxComponent,
-    DatetimepickerComponent
+    DatetimepickerComponent,
+    FormLabelComponent,
+    FormErrorsComponent,
+    FormHelpComponent,
   ],
 })
+
 export class FormUtilitiesModule {
-  static forRoot(options: FormUtilitiesOptions = {displayErrors: true}): ModuleWithProviders {
+  static forRoot(options: FormUtilitiesOptions = { displayErrors: true }): ModuleWithProviders {
+
+    options = Object.assign({}, options, {
+      displayErrors: true,
+      classFormGroup: 'form-group',
+      classFormControl: 'form-control',
+      classFormLabel: 'form-label',
+      classFormError: 'form-errors',
+      classFormHelp: 'form-help'
+    });
+
     return {
       ngModule: FormUtilitiesModule,
       providers: [

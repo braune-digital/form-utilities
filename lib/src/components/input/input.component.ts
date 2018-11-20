@@ -23,13 +23,19 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
   label: string;
 
   @Input()
+  help: string;
+
+  @Input()
+  inputClass: string;
+
+  @Input()
+  placeholder = '';
+
+  @Input()
   type = 'text';
 
   @Input()
   step = '';
-
-  @Input()
-  placeholder = '';
 
   @Input()
   disableErrors = false;

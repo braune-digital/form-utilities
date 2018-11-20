@@ -25,6 +25,12 @@ export class DatepickerComponent extends FormInputComponent implements ControlVa
   label: string;
 
   @Input()
+  help: string;
+
+  @Input()
+  inputClass: string;
+
+  @Input()
   placeholder = '';
 
   @Input()

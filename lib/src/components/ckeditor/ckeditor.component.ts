@@ -39,7 +39,13 @@ export class CkeditorComponent extends FormInputComponent implements ControlValu
   label: string;
 
   @Input()
-  placeholder: string = '';
+  help: string;
+
+  @Input()
+  inputClass: string;
+
+  @Input()
+  placeholder = '';
 
   @Input()
   disableErrors = false;

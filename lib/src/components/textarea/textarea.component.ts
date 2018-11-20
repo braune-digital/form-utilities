@@ -23,6 +23,12 @@ export class TextareaComponent extends FormInputComponent implements ControlValu
   label: string;
 
   @Input()
+  help: string;
+
+  @Input()
+  inputClass: string;
+
+  @Input()
   placeholder = '';
 
   @Input()

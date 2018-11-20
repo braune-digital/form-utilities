@@ -25,6 +25,12 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
   label: string;
 
   @Input()
+  help: string;
+
+  @Input()
+  inputClass: string;
+
+  @Input()
   placeholder = '';
 
   @Input()

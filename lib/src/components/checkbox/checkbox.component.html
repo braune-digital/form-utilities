@@ -1,4 +1,4 @@
-<div class="form-group">
+<div class="{{ _options.classFormGroup }}">
 	<div class="checkbox">
 		<label>
 			<input [disabled]="disabled" type="checkbox"  [(ngModel)]="isChecked" #inputEl
@@ -6,9 +6,8 @@
 				   ngDefaultControl /> <span *ngIf="label">{{ label }}</span>
 		</label>
 	</div>
-	<ul class="form-errors" *ngIf="errors.length">
-		<li class="form-errors__label" *ngFor="let error of errors">
-			{{ error | translate }}
-		</li>
-	</ul>
+
+  <bd-form-errors [errors]="errors"></bd-form-errors>
+  <bd-form-help [label]="help"></bd-form-help>
+
 </div>

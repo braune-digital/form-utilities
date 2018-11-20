@@ -1,10 +1,9 @@
-<div class="form-group">
-  <label class="text-small" *ngIf="label">{{ label }}</label>
-  <textarea autosize class="form-control" ngDefaultControl [placeholder]="placeholder"></textarea>
-</div>
+<div class="{{ _options.classFormGroup }}">
+  <bd-form-label [label]="label"></bd-form-label>
 
-<ul class="form-errors" *ngIf="errors.length">
-  <li class="form-errors__label" *ngFor="let error of errors">
-    {{ error | translate }}
-  </li>
-</ul>
+  <textarea autosize class="{{ _options.classFormControl }} {{ inputClass }}" ngDefaultControl [placeholder]="placeholder"></textarea>
+
+  <bd-form-errors [errors]="errors"></bd-form-errors>
+  <bd-form-help [label]="help"></bd-form-help>
+
+</div>

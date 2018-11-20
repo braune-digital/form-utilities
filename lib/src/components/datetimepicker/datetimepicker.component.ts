@@ -31,6 +31,12 @@ export class DatetimepickerComponent extends FormInputComponent implements Contr
   label: string;
 
   @Input()
+  help: string;
+
+  @Input()
+  inputClass: string;
+
+  @Input()
   placeholder = '';
 
   @Input()

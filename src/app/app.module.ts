@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FormUtilitiesModule } from '../../lib/src/form-utilities.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CKEditorModule } from 'ng2-ckeditor';
+import {TranslateModule} from '@ngx-translate/core';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CKEditorModule } from 'ng2-ckeditor';
     FormsModule,
     CKEditorModule,
     ReactiveFormsModule,
-    FormUtilitiesModule.forRoot()
+    FormUtilitiesModule.forRoot(),
+    TranslateModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,11 @@
-<div class="form-group">
-  <label class="text-small" *ngIf="label">{{ label }}</label>
+<div class="{{ _options.classFormGroup }}">
+  <bd-form-label [label]="label"></bd-form-label>
+
   <div class="row">
     <div class="col-md-6 col-sm-12">
       <input #dp
              type="text"
-             class="form-control"
+             class="{{ _options.classFormControl }} {{ inputClass }}"
              bsDatepicker
              [bsConfig]="bsConfig"
              [placeholder]="placeholder"
@@ -25,9 +26,8 @@
       ></timepicker>
     </div>
   </div>
-  <ul class="form-errors" *ngIf="errors.length">
-    <li class="form-errors__label" *ngFor="let error of errors">
-      {{ error | translate }}
-    </li>
-  </ul>
+
+  <bd-form-errors [errors]="errors"></bd-form-errors>
+  <bd-form-help [label]="help"></bd-form-help>
+
 </div>
