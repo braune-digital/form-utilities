@@ -33,6 +33,15 @@ export interface FormUtilitiesOptions {
   classFormHelp?: string;
 }
 
+export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
+  displayErrors: true,
+  classFormGroup: 'form-group',
+  classFormControl: 'form-control',
+  classFormLabel: 'form-label',
+  classFormError: 'form-errors',
+  classFormHelp: 'form-help'
+};
+
 @NgModule({
   imports: [
     CommonModule,
@@ -78,21 +87,11 @@ export interface FormUtilitiesOptions {
 
 export class FormUtilitiesModule {
   static forRoot(options: FormUtilitiesOptions = { displayErrors: true }): ModuleWithProviders {
-
-    options = Object.assign({}, options, {
-      displayErrors: true,
-      classFormGroup: 'form-group',
-      classFormControl: 'form-control',
-      classFormLabel: 'form-label',
-      classFormError: 'form-errors',
-      classFormHelp: 'form-help'
-    });
-
     return {
       ngModule: FormUtilitiesModule,
       providers: [
         FormErrorService,
-        {provide: 'options', useValue: options},
+        {provide: 'options', useValue: DefaultFormUtilitiesOptions},
         {
           provide: HTTP_INTERCEPTORS,
           useClass: FormErrorInterceptor,

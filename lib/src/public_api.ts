@@ -15,7 +15,7 @@ export { SelectDirective } from './directives/select/select.directive';
 export { FormErrorService } from './services/form-error.service';
 
 // Module
-export { FormUtilitiesModule } from './form-utilities.module';
+export { FormUtilitiesModule, DefaultFormUtilitiesOptions } from './form-utilities.module';
 
 // Validators
 export { isEmail } from './validators/isEmail.validator';
