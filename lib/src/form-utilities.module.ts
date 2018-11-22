@@ -23,6 +23,8 @@ import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import {FormLabelComponent} from './components/form-label/form-label.component';
 import {FormErrorsComponent} from './components/form-errors/form-errors.component';
 import {FormHelpComponent} from './components/form-help/form-help.component';
+import { QuillModule } from 'ngx-quill'
+import { RteComponent } from './components/rte/rte.component';
 
 export interface FormUtilitiesOptions {
   displayErrors: boolean;
@@ -52,7 +54,8 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     TranslateModule,
     BsDatepickerModule.forRoot(),
     TextareaAutosizeModule,
-    TimepickerModule.forRoot()
+    TimepickerModule.forRoot(),
+    QuillModule
   ],
   declarations: [
     InputComponent,
@@ -60,6 +63,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     DaterangeComponent,
     TextareaComponent,
     CkeditorComponent,
+    RteComponent,
     SelectDirective,
     ProgressButtonComponent,
     CheckboxComponent,
@@ -75,6 +79,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     DaterangeComponent,
     TextareaComponent,
     CkeditorComponent,
+    RteComponent,
     SelectDirective,
     ProgressButtonComponent,
     CheckboxComponent,

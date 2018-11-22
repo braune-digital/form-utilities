@@ -14,6 +14,7 @@ export class AppComponent {
   constructor(private _builder: FormBuilder) {
     this.form = this._builder.group({
       'descriptionCk': ['<p>CkEditor</p>', Validators.required],
+      'descriptionRTE': ['<p>RTE Quill</p>', Validators.required],
       'descriptionTextarea': ['Textarea', Validators.required],
       'input': ['', Validators.required],
       'datepicker': [new Date(), Validators.required],

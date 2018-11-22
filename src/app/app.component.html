@@ -3,6 +3,7 @@
   <h1>Components Test</h1>
   <form [formGroup]="form">
     <bd-ckeditor [formControl]="form.get('descriptionCk')"></bd-ckeditor>
+    <bd-rte [formControl]="form.get('descriptionRTE')"></bd-rte>
     <bd-textarea [formControl]="form.get('descriptionTextarea')"></bd-textarea>
     <bd-input [formControl]="form.get('input')" label="label" help="help text block"></bd-input>
     <bd-datepicker [formControl]="form.get('datepicker')"></bd-datepicker>
