@@ -54,7 +54,7 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
   @ViewChild('dp')
   daterange: BsDaterangepickerDirective;
 
-  constructor(@Inject('options') private options: FormUtilitiesOptions, public formErrorService: FormErrorService, public langService: BsLocaleService) {
+  constructor(@Inject('options') public options: FormUtilitiesOptions, public formErrorService: FormErrorService, public langService: BsLocaleService) {
     super(options);
   }
 

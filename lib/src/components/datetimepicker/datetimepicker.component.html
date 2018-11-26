@@ -1,11 +1,11 @@
-<div class="{{ _options.classFormGroup }}">
+<div class="{{ options.classFormGroup }}">
   <bd-form-label [label]="label"></bd-form-label>
 
   <div class="row">
     <div class="col-md-6 col-sm-12">
       <input #dp
              type="text"
-             class="{{ _options.classFormControl }} {{ inputClass }}"
+             class="{{ options.classFormControl }} {{ inputClass }}"
              bsDatepicker
              [bsConfig]="bsConfig"
              [placeholder]="placeholder"

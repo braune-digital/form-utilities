@@ -57,7 +57,7 @@ export class DatepickerComponent extends FormInputComponent implements ControlVa
   @ViewChild('dp')
   datepicker: BsDaterangepickerDirective;
 
-  constructor(@Inject('options') private options: FormUtilitiesOptions, public formErrorService: FormErrorService, public langService: BsLocaleService) {
+  constructor(@Inject('options') public options: FormUtilitiesOptions, public formErrorService: FormErrorService, public langService: BsLocaleService) {
     super(options);
   }
 

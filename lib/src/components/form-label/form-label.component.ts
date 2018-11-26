@@ -11,7 +11,7 @@ export class FormLabelComponent {
 
   @Input() label: string;
 
-  public constructor(@Inject('options') public _options: FormUtilitiesOptions) {
+  public constructor(@Inject('options') public options: FormUtilitiesOptions) {
   }
 
 }
