@@ -14,4 +14,7 @@ export class FormErrorsComponent {
   public constructor(@Inject('options') public _options: FormUtilitiesOptions) {
   }
 
+  get options(): FormUtilitiesOptions {
+    return this._options;
+  }
 }
