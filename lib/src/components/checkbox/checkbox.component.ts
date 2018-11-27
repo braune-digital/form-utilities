@@ -51,8 +51,8 @@ export class CheckboxComponent extends FormInputComponent implements ControlValu
 
   @Input() isChecked = false;
 
-  constructor(@Inject('options') public options:FormUtilitiesOptions, public formErrorService: FormErrorService) {
-    super(options);
+  constructor(@Inject('options') protected _options:FormUtilitiesOptions, public formErrorService: FormErrorService) {
+    super(_options);
   }
 
   get value(): any {

@@ -11,7 +11,7 @@ export class FormErrorsComponent {
 
   @Input() errors: any;
 
-  public constructor(@Inject('options') public options: FormUtilitiesOptions) {
+  public constructor(@Inject('options') public _options: FormUtilitiesOptions) {
   }
 
 }

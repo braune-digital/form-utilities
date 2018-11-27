@@ -55,8 +55,8 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
   @Output()
   onInputKeyup: EventEmitter<string> = new EventEmitter();
 
-  constructor(@Inject('options') public options:FormUtilitiesOptions, public formErrorService: FormErrorService) {
-    super(options);
+  constructor(@Inject('options') protected _options:FormUtilitiesOptions, public formErrorService: FormErrorService) {
+    super(_options);
   }
 
   handleOnInputKeypress(value: string): void {

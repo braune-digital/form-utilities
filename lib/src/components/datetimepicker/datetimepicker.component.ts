@@ -63,8 +63,8 @@ export class DatetimepickerComponent extends FormInputComponent implements Contr
   onChange: (_: any) => void;
   onTouched: () => void;
 
-  constructor(@Inject('options') public options: FormUtilitiesOptions, public formErrorService: FormErrorService, public langService: BsLocaleService) {
-    super(options);
+  constructor(@Inject('options') protected _options: FormUtilitiesOptions, public formErrorService: FormErrorService, public langService: BsLocaleService) {
+    super(_options);
   }
 
   writeValue(value: string): void {

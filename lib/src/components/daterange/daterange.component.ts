@@ -54,8 +54,8 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
   @ViewChild('dp')
   daterange: BsDaterangepickerDirective;
 
-  constructor(@Inject('options') public options: FormUtilitiesOptions, public formErrorService: FormErrorService, public langService: BsLocaleService) {
-    super(options);
+  constructor(@Inject('options') protected _options: FormUtilitiesOptions, public formErrorService: FormErrorService, public langService: BsLocaleService) {
+    super(_options);
   }
 
   ngOnInit() {

@@ -1,7 +1,7 @@
-<div class="{{ options.classFormGroup }}">
+<div class="{{ _options.classFormGroup }}">
   <bd-form-label [label]="label"></bd-form-label>
 
-	<input [disabled]="disabled" [type]="type" [step]="step" class="{{ options.classFormControl }} {{ inputClass }}" [placeholder]="placeholder"
+	<input [disabled]="disabled" [type]="type" [step]="step" class="{{ _options.classFormControl }} {{ inputClass }}" [placeholder]="placeholder"
 		   (change)="handleOnInputChange($event.target.value)" (keypress)="handleOnInputKeypress($event.target.value)"
 		   (keyup)="handleOnInputKeyup($event.target.value)" ngDefaultControl>
 
