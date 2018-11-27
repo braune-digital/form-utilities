@@ -37,7 +37,7 @@ export class TextareaComponent extends FormInputComponent implements ControlValu
   @Input()
   formControl: FormControl;
 
-  constructor(@Inject('options') private options:FormUtilitiesOptions, public formErrorService: FormErrorService) {
+  constructor(@Inject('options') public options:FormUtilitiesOptions, public formErrorService: FormErrorService) {
     super(options);
   }
 }

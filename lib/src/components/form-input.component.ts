@@ -24,7 +24,7 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   get errors(): Array<string> {
     let errors = [];
     if (
-      (this._options.displayErrors || this.displayErrors)
+      (this.options.displayErrors || this.displayErrors)
       && this.formControl
       && !this.formControl.pristine
       && this.formControl.touched
@@ -42,7 +42,7 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   }
 
 
-  protected constructor(@Inject('options') protected _options: FormUtilitiesOptions) {
+  protected constructor(@Inject('options') public options: FormUtilitiesOptions) {
   }
 
   ngOnInit(): void {

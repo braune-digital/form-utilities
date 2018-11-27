@@ -56,7 +56,7 @@ export class CkeditorComponent extends FormInputComponent implements ControlValu
   onChange: (_: any) => void;
   onTouched: () => void;
 
-  constructor(@Inject('options') private options:FormUtilitiesOptions, public formErrorService: FormErrorService) {
+  constructor(@Inject('options') public options:FormUtilitiesOptions, public formErrorService: FormErrorService) {
     super(options);
   }
 
