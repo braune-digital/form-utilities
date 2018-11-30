@@ -27,6 +27,7 @@
     "@ngx-translate/core": "^9.1.1",
     "core-js": "^2.4.1",
     "ng2-ckeditor": "^1.1.4",
+    "ngx-autosize": "^1.2.4",
     "ngx-bootstrap": "^2.0.0",
     "ngx-quill": "^2.2.0",
     "ngx-textarea-autosize": "^2.0.0",

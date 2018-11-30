@@ -25,6 +25,7 @@ import {FormErrorsComponent} from './components/form-errors/form-errors.componen
 import {FormHelpComponent} from './components/form-help/form-help.component';
 import { QuillModule } from 'ngx-quill'
 import { RteComponent } from './components/rte/rte.component';
+import { AutosizeModule } from 'ngx-autosize';
 
 export interface FormUtilitiesOptions {
   displayErrors: boolean;
@@ -53,9 +54,9 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     CKEditorModule,
     TranslateModule,
     BsDatepickerModule.forRoot(),
-    TextareaAutosizeModule,
     TimepickerModule.forRoot(),
-    QuillModule
+    QuillModule,
+    AutosizeModule
   ],
   declarations: [
     InputComponent,
