@@ -16,7 +16,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
 import { DaterangeComponent } from './components/daterange/daterange.component';
-import {TextareaAutosizeModule} from 'ngx-textarea-autosize';
 import {CheckboxComponent} from './components/checkbox/checkbox.component';
 import {DatetimepickerComponent} from './components/datetimepicker/datetimepicker.component';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
@@ -25,7 +24,7 @@ import {FormErrorsComponent} from './components/form-errors/form-errors.componen
 import {FormHelpComponent} from './components/form-help/form-help.component';
 import { QuillModule } from 'ngx-quill'
 import { RteComponent } from './components/rte/rte.component';
-import { AutosizeModule } from 'ngx-autosize';
+import { AutosizeDirective } from './directives/autosize.directive';
 
 export interface FormUtilitiesOptions {
   displayErrors: boolean;
@@ -55,8 +54,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     TranslateModule,
     BsDatepickerModule.forRoot(),
     TimepickerModule.forRoot(),
-    QuillModule,
-    AutosizeModule
+    QuillModule
   ],
   declarations: [
     InputComponent,
@@ -66,6 +64,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     CkeditorComponent,
     RteComponent,
     SelectDirective,
+    AutosizeDirective,
     ProgressButtonComponent,
     CheckboxComponent,
     DatetimepickerComponent,
@@ -88,6 +87,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     FormLabelComponent,
     FormErrorsComponent,
     FormHelpComponent,
+    AutosizeDirective
   ],
 })
 
