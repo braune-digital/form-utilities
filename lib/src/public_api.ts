@@ -10,7 +10,6 @@ export { ProgressButtonComponent } from './components/progress-button/progress-b
 
 // Directives
 export { SelectDirective } from './directives/select/select.directive';
-export { AutosizeDirective } from './directives/autosize.directive';
 
 // Service
 export { FormErrorService } from './services/form-error.service';

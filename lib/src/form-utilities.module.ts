@@ -24,7 +24,7 @@ import {FormErrorsComponent} from './components/form-errors/form-errors.componen
 import {FormHelpComponent} from './components/form-help/form-help.component';
 import { QuillModule } from 'ngx-quill'
 import { RteComponent } from './components/rte/rte.component';
-import { AutosizeDirective } from './directives/autosize.directive';
+import {AutosizeModule} from 'ngx-autosize';
 
 export interface FormUtilitiesOptions {
   displayErrors: boolean;
@@ -51,6 +51,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     ReactiveFormsModule,
     NgSelectModule,
     CKEditorModule,
+    AutosizeModule,
     TranslateModule,
     BsDatepickerModule.forRoot(),
     TimepickerModule.forRoot(),
@@ -64,7 +65,6 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     CkeditorComponent,
     RteComponent,
     SelectDirective,
-    AutosizeDirective,
     ProgressButtonComponent,
     CheckboxComponent,
     DatetimepickerComponent,
@@ -86,8 +86,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     DatetimepickerComponent,
     FormLabelComponent,
     FormErrorsComponent,
-    FormHelpComponent,
-    AutosizeDirective
+    FormHelpComponent
   ],
 })
 
