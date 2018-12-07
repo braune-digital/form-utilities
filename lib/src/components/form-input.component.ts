@@ -3,6 +3,7 @@ import { ControlValueAccessor, FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 import { FormErrorService } from '../services/form-error.service';
 import { FormUtilitiesOptions } from '../form-utilities.module';
+import {TipsOptions} from './utilities/models';
 
 export abstract class FormInputComponent implements OnInit, OnDestroy, ControlValueAccessor {
 
@@ -20,6 +21,26 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
 
   @Input()
   public displayErrors = false;
+
+  @Input()
+  public required = false;
+
+  @Input()
+  tips: Array<TipsOptions>;
+
+  @Input()
+  help: string;
+
+  @Input()
+  maxLength: number;
+
+  @Input()
+  append: string;
+
+  @Input()
+  prepend: string;
+
+  uniqueId =  '_' + Math.random().toString(36).substr(2, 9);
 
   get errors(): Array<string> {
     let errors = [];

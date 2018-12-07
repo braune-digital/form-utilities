@@ -1,19 +1,38 @@
 <div class="{{ options.classFormGroup }}">
-  <bd-form-label [label]="label"></bd-form-label>
 
-  <input #dp
-         type="text"
-         class="{{ options.classFormControl }} {{ inputClass }}"
-         bsDatepicker
-         [bsConfig]="bsConfig"
-         [formControl]="formControl"
-         [placeholder]="placeholder"
-         [minDate]="bsMinDate"
-         [maxDate]="bsMaxDate"
-         [bsValue]="bsValue"
-  >
+  <div class="{{ options.classFromInput }}">
 
-  <bd-form-errors [errors]="errors"></bd-form-errors>
-  <bd-form-help [label]="help"></bd-form-help>
+    <div class="{{ options.classFromLegend }}">
 
+      <bd-form-label [label]="label" [inputId]="uniqueId"></bd-form-label>
+      <bd-form-required [required]="required" *ngIf="required"></bd-form-required>
+      <bd-form-tips [tips]="tips" *ngIf="tips"></bd-form-tips>
+
+    </div>
+
+    <div class="{{ options.classFormInputGroup }}">
+
+      <bd-form-addon [text]="prepend" position="prepend" *ngIf="prepend"></bd-form-addon>
+
+      <input #dp
+             type="text"
+             class="{{ options.classFormControl }} {{ inputClass }}"
+             bsDatepicker
+             [bsConfig]="bsConfig"
+             [formControl]="formControl"
+             [placeholder]="placeholder"
+             [attr.id]="uniqueId"
+             [attr.maxlength]="maxLength"
+             [attr.aria-label]="placeholder"
+             [minDate]="bsMinDate"
+             [maxDate]="bsMaxDate"
+             [bsValue]="bsValue">
+
+      <bd-form-addon [text]="append" position="append" *ngIf="append"></bd-form-addon>
+
+    </div>
+  </div>
+
+  <bd-form-errors [errors]="errors" *ngIf="errors"></bd-form-errors>
+  <bd-form-help [label]="help" *ngIf="help"></bd-form-help>
 </div>

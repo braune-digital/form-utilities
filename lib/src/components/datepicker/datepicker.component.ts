@@ -13,8 +13,7 @@ import { BsDatepickerConfig, BsDaterangepickerDirective, BsLocaleService } from 
     multi: true
   }],
   selector: 'bd-datepicker',
-  templateUrl: './datepicker.component.html',
-  styleUrls: ['./datepicker.component.scss']
+  templateUrl: './datepicker.component.html'
 })
 export class DatepickerComponent extends FormInputComponent implements ControlValueAccessor, OnInit {
 
@@ -23,9 +22,6 @@ export class DatepickerComponent extends FormInputComponent implements ControlVa
 
   @Input()
   label: string;
-
-  @Input()
-  help: string;
 
   @Input()
   inputClass: string;

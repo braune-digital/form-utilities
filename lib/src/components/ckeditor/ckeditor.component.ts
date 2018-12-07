@@ -14,8 +14,7 @@ import { FormUtilitiesOptions } from '../../form-utilities.module';
     multi: true
   }],
   selector: 'bd-ckeditor',
-  templateUrl: './ckeditor.component.html',
-  styleUrls: ['./ckeditor.component.scss']
+  templateUrl: './ckeditor.component.html'
 })
 export class CkeditorComponent extends FormInputComponent implements ControlValueAccessor {
 
@@ -36,14 +35,10 @@ export class CkeditorComponent extends FormInputComponent implements ControlValu
   };
 
   @Input()
-  label: string;
-
-  @Input()
-  help: string;
-
-  @Input()
   inputClass: string;
 
+  @Input()
+  label: string;
   @Input()
   placeholder = '';
 

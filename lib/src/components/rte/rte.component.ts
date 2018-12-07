@@ -14,8 +14,7 @@ import { FormUtilitiesOptions } from '../../form-utilities.module';
     multi: true
   }],
   selector: 'bd-rte',
-  templateUrl: './rte.component.html',
-  styleUrls: ['./rte.component.scss']
+  templateUrl: './rte.component.html'
 })
 export class RteComponent extends FormInputComponent{
 

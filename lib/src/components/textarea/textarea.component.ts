@@ -12,8 +12,7 @@ import { FormUtilitiesOptions } from '../../form-utilities.module';
     multi: true
   }],
   selector: 'bd-textarea',
-  templateUrl: './textarea.component.html',
-  styleUrls: ['./textarea.component.scss']
+  templateUrl: './textarea.component.html'
 })
 export class TextareaComponent extends FormInputComponent implements ControlValueAccessor {
   @ViewChild(DefaultValueAccessor)

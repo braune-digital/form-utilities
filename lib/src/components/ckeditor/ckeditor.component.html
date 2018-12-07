@@ -1,14 +1,32 @@
 <div class="{{ options.classFormGroup }}">
-  <bd-form-label [label]="label"></bd-form-label>
 
-  <ckeditor
-    ngDefaultControl
-    [config]="ckeditorConfig"
-    (change)="onEditorChange($event)"
-  >
-  </ckeditor>
+  <div class="{{ options.classFromInput }}">
 
-  <bd-form-errors [errors]="errors"></bd-form-errors>
-  <bd-form-help [label]="help"></bd-form-help>
+    <div class="{{ options.classFromLegend }}">
 
+      <bd-form-label [label]="label" [inputId]="uniqueId"></bd-form-label>
+      <bd-form-required [required]="required" *ngIf="required"></bd-form-required>
+      <bd-form-tips [tips]="tips" *ngIf="tips"></bd-form-tips>
+      <bd-form-counter [maxLength]="maxLength" [form]="formControl" *ngIf="maxLength && options.counterBefore"></bd-form-counter>
+
+    </div>
+
+    <div class="{{ options.classFormInputGroup }}">
+
+      <ckeditor
+        class="{{ inputClass }}"
+        [attr.id]="uniqueId"
+        [attr.maxlength]="maxLength"
+        [attr.aria-label]="placeholder"
+        [config]="ckeditorConfig"
+        (change)="onEditorChange($event)"
+        ngDefaultControl>
+      </ckeditor>
+
+    </div>
+  </div>
+
+  <bd-form-errors [errors]="errors" *ngIf="errors"></bd-form-errors>
+  <bd-form-counter [maxLength]="maxLength" [form]="formControl" *ngIf="maxLength && !options.counterBefore"></bd-form-counter>
+  <bd-form-help [label]="help" *ngIf="help"></bd-form-help>
 </div>

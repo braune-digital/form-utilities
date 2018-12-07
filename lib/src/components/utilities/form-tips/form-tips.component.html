@@ -1,0 +1,5 @@
+<ng-container *ngIf="tips && tips.length">
+  <span *ngFor="let tip of tips">
+    <i class="fas {{ tip.icon }}" [tooltip]="tip.tooltip"></i>
+  </span>
+</ng-container>

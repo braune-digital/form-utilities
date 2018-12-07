@@ -1,14 +1,113 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="width: 800px; margin: 0 auto;">
+
+  <style>
+    h2 {
+      margin: 80px 0 30px;
+      border-bottom: 4px solid black;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin: 50px 0 30px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #17a2b8;
+    }
+
+    hr {
+    }
+  </style>
+
   <h1>Components Test</h1>
+
   <form [formGroup]="form">
-    <bd-ckeditor [formControl]="form.get('descriptionCk')"></bd-ckeditor>
-    <bd-rte [formControl]="form.get('descriptionRTE')"></bd-rte>
+
+    <h2>Input</h2>
+
+    <h3>No Options</h3>
+    <bd-input [formControl]="form.get('input')"></bd-input>
+
+    <h3>All Options</h3>
+    <bd-input [formControl]="form.get('input')"
+              [tips]="[{ 'icon': 'fa-video' }, {'icon': 'fa-info-circle', 'tooltip': 'das ist der tooltip' }]"
+              label="label"
+              required="true"
+              maxLength="40"
+              append="%"
+              prepend="@example.com"
+              help="help text block">
+    </bd-input>
+
+    <h2>Textarea</h2>
+
+    <h3>No Options</h3>
     <bd-textarea [formControl]="form.get('descriptionTextarea')"></bd-textarea>
-    <bd-input [formControl]="form.get('input')" label="label" help="help text block"></bd-input>
-    <bd-datepicker [formControl]="form.get('datepicker')"></bd-datepicker>
+
+    <h3>All Options</h3>
+    <bd-textarea [formControl]="form.get('descriptionTextarea')"
+                 [tips]="[{ 'icon': 'fa-video' }, {'icon': 'fa-info-circle', 'tooltip': 'das ist der tooltip' }, {'icon': 'fa-user', 'tooltip': 'das ist der tooltip' }]"
+                 label="label"
+                 required="true"
+                 maxLength="40"
+                 append="%"
+                 prepend="@example.com"
+                 help="help text block"></bd-textarea>
+
+    <h3>CKE Editor</h3>
+    <bd-ckeditor [formControl]="form.get('descriptionCk')"></bd-ckeditor>
+
+    <h3>Quill Editor</h3>
+    <bd-rte [formControl]="form.get('descriptionRTE')"></bd-rte>
+
+    <h2>Dates</h2>
+
+    <h3>Datepicker</h3>
+    <bd-datepicker [formControl]="form.get('datepicker')" label="Datepicker"></bd-datepicker>
+    <bd-datepicker [formControl]="form.get('datepicker')"
+                   [tips]="[{ 'icon': 'fa-video' }, {'icon': 'fa-info-circle', 'tooltip': 'das ist der tooltip' }]"
+                   label="label"
+                   required="true"
+                   maxLength="40"
+                   append="%"
+                   prepend="@example.com"
+                   help="help text block"></bd-datepicker>
+
+    <h3>Daterange</h3>
     <bd-daterange [formControl]="form.get('daterange')"></bd-daterange>
+    <bd-daterange [formControl]="form.get('daterange')"
+                  [tips]="[{ 'icon': 'fa-video' }, {'icon': 'fa-info-circle', 'tooltip': 'das ist der tooltip' }]"
+                  label="label"
+                  required="true"
+                  maxLength="40"
+                  append="%"
+                  prepend="@example.com"
+                  help="help text block"></bd-daterange>
+
+    <h3>Datetimepicker</h3>
+    <bd-datetimepicker [formControl]="form.get('datetimepicker')"></bd-datetimepicker>
+    <bd-datetimepicker [formControl]="form.get('datetimepicker')"
+                  [tips]="[{ 'icon': 'fa-video' }, {'icon': 'fa-info-circle', 'tooltip': 'das ist der tooltip' }]"
+                  label="label"
+                  required="true"
+                  maxLength="40"
+                  append="%"
+                  prepend="@example.com"
+                  help="help text block"></bd-datetimepicker>
+
+    <h3>Checkbox</h3>
+    <bd-checkbox [formControl]="form.get('checkbox')"
+                 [tips]="[{ 'icon': 'fa-video' }, {'icon': 'fa-info-circle', 'tooltip': 'das ist der tooltip' }]"
+                 label="label"
+                 required="true"
+                 maxLength="40"
+                 append="%"
+                 prepend="@example.com"
+                 help="help text block"></bd-checkbox>
+
+    <h2>Buttons</h2>
     <bd-progress-button [btnDisabled]="form.invalid" type="submit">Button submit</bd-progress-button>
   </form>
 </div>
+
 

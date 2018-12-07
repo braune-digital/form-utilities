@@ -12,8 +12,7 @@ import { FormUtilitiesOptions } from '../../form-utilities.module';
     multi: true
   }],
   selector: 'bd-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.scss']
+  templateUrl: './input.component.html'
 })
 export class InputComponent extends FormInputComponent implements ControlValueAccessor {
   @ViewChild(DefaultValueAccessor)
@@ -21,9 +20,6 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
 
   @Input()
   label: string;
-
-  @Input()
-  help: string;
 
   @Input()
   inputClass: string;

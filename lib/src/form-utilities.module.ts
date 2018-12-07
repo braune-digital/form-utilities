@@ -19,29 +19,61 @@ import { DaterangeComponent } from './components/daterange/daterange.component';
 import {CheckboxComponent} from './components/checkbox/checkbox.component';
 import {DatetimepickerComponent} from './components/datetimepicker/datetimepicker.component';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
-import {FormLabelComponent} from './components/form-label/form-label.component';
-import {FormErrorsComponent} from './components/form-errors/form-errors.component';
-import {FormHelpComponent} from './components/form-help/form-help.component';
-import { QuillModule } from 'ngx-quill'
+import {FormLabelComponent} from './components/utilities/form-label/form-label.component';
+import {FormErrorsComponent} from './components/utilities/form-errors/form-errors.component';
+import {FormHelpComponent} from './components/utilities/form-help/form-help.component';
+import { QuillModule } from 'ngx-quill';
 import { RteComponent } from './components/rte/rte.component';
 import { AutosizeDirective } from './directives/autosize.directive';
+import {FormTipsComponent} from './components/utilities/form-tips/form-tips.component';
+import {TooltipModule} from 'ngx-bootstrap';
+import {FormRequiredComponent} from './components/utilities/form-required/form-required.component';
+import {MaxLengthDirective} from './directives/max-length.directive';
+import {FormCounterComponent} from './components/utilities/form-counter/form-counter.component';
+import {FormAddonComponent} from './components/utilities/form-addon/form-addon.component';
 
 export interface FormUtilitiesOptions {
   displayErrors: boolean;
   classFormGroup?: string;
-  classFormControl?: string;
+  classFromInput?: string;
+  classFormInputGroup?: string;
+  classFormInputGroupPrepend?: string;
+  classFormInputGroupAppend?: string;
+  classFormInputGroupText?: string;
+  classFromLegend?: string;
   classFormLabel?: string;
+  classFormControl?: string;
+  classFormCounter?: string;
   classFormError?: string;
   classFormHelp?: string;
+  classFormRequired?: string;
+  classIconBase?: string;
+  requiredString?: string;
+  maxLengthString?: string;
+  minLengthString?: string;
+  counterBefore?: boolean;
 }
 
 export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
   displayErrors: true,
   classFormGroup: 'form-group',
-  classFormControl: 'form-control',
+  classFromInput: 'form-input',
+  classFormInputGroup: 'input-group',
+  classFormInputGroupPrepend: 'input-group-prepend',
+  classFormInputGroupAppend: 'input-group-append',
+  classFormInputGroupText: 'input-group-text',
+  classFromLegend: 'form-legend',
   classFormLabel: 'form-label',
+  classFormControl: 'form-control',
+  classFormCounter: 'form-counter',
   classFormError: 'form-errors',
-  classFormHelp: 'form-help'
+  classFormHelp: 'form-help',
+  classFormRequired: 'form-required',
+  classIconBase: 'far',
+  requiredString: '*',
+  maxLengthString: 'Noch %s Zeichen',
+  minLengthString: 'Es fehlen noch %s Zeichen',
+  counterBefore: true
 };
 
 @NgModule({
@@ -52,6 +84,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     NgSelectModule,
     CKEditorModule,
     TranslateModule,
+    TooltipModule.forRoot(),
     BsDatepickerModule.forRoot(),
     TimepickerModule.forRoot(),
     QuillModule
@@ -64,13 +97,20 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     CkeditorComponent,
     RteComponent,
     SelectDirective,
-    AutosizeDirective,
     ProgressButtonComponent,
     CheckboxComponent,
     DatetimepickerComponent,
+
+    AutosizeDirective,
+    MaxLengthDirective,
+
     FormLabelComponent,
     FormErrorsComponent,
     FormHelpComponent,
+    FormTipsComponent,
+    FormRequiredComponent,
+    FormCounterComponent,
+    FormAddonComponent
   ],
   exports: [
     NgSelectModule,
@@ -84,10 +124,17 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     ProgressButtonComponent,
     CheckboxComponent,
     DatetimepickerComponent,
+
+    AutosizeDirective,
+    MaxLengthDirective,
+
     FormLabelComponent,
     FormErrorsComponent,
     FormHelpComponent,
-    AutosizeDirective
+    FormTipsComponent,
+    FormRequiredComponent,
+    FormCounterComponent,
+    FormAddonComponent
   ],
 })
 

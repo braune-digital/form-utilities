@@ -1,13 +1,35 @@
 <div class="{{ options.classFormGroup }}">
-	<div class="checkbox">
-		<label>
-			<input [disabled]="disabled" type="checkbox"  [(ngModel)]="isChecked" #inputEl
-				   (change)="onInputChange(inputEl.checked)"
-				   ngDefaultControl /> <span *ngIf="label">{{ label }}</span>
-		</label>
-	</div>
 
-  <bd-form-errors [errors]="errors"></bd-form-errors>
-  <bd-form-help [label]="help"></bd-form-help>
+
 
 </div>
+
+<div class="{{ options.classFormGroup }}">
+
+  <div class="{{ options.classFromInput }}">
+
+    <div class="{{ options.classFromLegend }}">
+
+      <bd-form-label [label]="label" [inputId]="uniqueId"></bd-form-label>
+      <bd-form-required [required]="required" *ngIf="required"></bd-form-required>
+      <bd-form-tips [tips]="tips" *ngIf="tips"></bd-form-tips>
+
+    </div>
+
+    <div class="{{ options.classFormInputGroup }}">
+
+      <div class="checkbox">
+        <label>
+          <input [disabled]="disabled" type="checkbox"  [(ngModel)]="isChecked" #inputEl
+                 (change)="onInputChange(inputEl.checked)"
+                 ngDefaultControl /> <span *ngIf="label">{{ label }}</span>
+        </label>
+      </div>
+
+    </div>
+  </div>
+
+  <bd-form-errors [errors]="errors" *ngIf="errors"></bd-form-errors>
+  <bd-form-help [label]="help" *ngIf="help"></bd-form-help>
+</div>
+
