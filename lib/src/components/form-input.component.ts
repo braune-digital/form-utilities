@@ -107,8 +107,11 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   }
 
   get inputGroupClass(): string {
-    if (this.prepend || this.append) {
-      return this._options.classFormInputGroup;
+    if (this.prepend) {
+      return this._options.classFormInputGroup + ' ' + this._options.classFormInputGroup + '--prepend';
+    }
+    if (this.append) {
+      return this._options.classFormInputGroup + ' ' + this._options.classFormInputGroup + '--append';
     }
     return '';
   }
