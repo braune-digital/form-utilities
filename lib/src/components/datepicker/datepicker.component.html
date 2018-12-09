@@ -1,11 +1,11 @@
-<div class="{{ options.classFormGroup }}">
+<div class="{{ options.classFormGroup }}" [ngClass]="{'has-errors': errors.length}">
 
   <div class="{{ options.classFromInput }}">
 
     <div class="{{ options.classFromLegend }}">
 
       <bd-form-label [label]="label" [inputId]="uniqueId"></bd-form-label>
-      <bd-form-required [required]="required" *ngIf="required"></bd-form-required>
+      <bd-form-required [required]="requiredMarker" *ngIf="requiredMarker"></bd-form-required>
       <bd-form-tips [tips]="tips" *ngIf="tips"></bd-form-tips>
 
     </div>

@@ -23,7 +23,7 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   public displayErrors = false;
 
   @Input()
-  public required = false;
+  public requiredMarker = false;
 
   @Input()
   tips: Array<TipsOptions>;
@@ -40,6 +40,9 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   @Input()
   prepend: string;
 
+  @Input()
+  disabled = false;
+
   uniqueId =  '_' + Math.random().toString(36).substr(2, 9);
 
   private _focus: boolean;
@@ -49,7 +52,6 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
     if (
       (this.options.displayErrors || this.displayErrors)
       && this.formControl
-      && !this.formControl.pristine
       && this.formControl.touched
       && this.formControl.errors
     ) {

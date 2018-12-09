@@ -37,9 +37,6 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
   disableErrors = false;
 
   @Input()
-  disabled = false;
-
-  @Input()
   formControl: FormControl;
 
   @Output()
