@@ -42,6 +42,8 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
 
   uniqueId =  '_' + Math.random().toString(36).substr(2, 9);
 
+  private _focus: boolean;
+
   get errors(): Array<string> {
     let errors = [];
     if (
@@ -63,10 +65,10 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   }
 
 
-  protected constructor(@Inject('options') protected _options: FormUtilitiesOptions) {
-  }
+  protected constructor(@Inject('options') protected _options: FormUtilitiesOptions) {}
 
   ngOnInit(): void {
+
     // Tell the
     this.formErrorServiceSubscription = this.formErrorService.propertyError.subscribe(error => {
       // todo - @Jannik - do not set this on every control
@@ -102,11 +104,27 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
     this.input.setDisabledState(isDisabled);
   }
 
+  get inputGroupClass(): string {
+    if (this.prepend) {
+      return this._options.classFormInputGroup;
+    }
+    return '';
+  }
+
   private getErrorKey(propertyPath: string): string {
     return FormInputComponent.REMOTE_ERROR_PREFIX + propertyPath.split('.').pop();
   }
 
   get options(): FormUtilitiesOptions {
     return this._options;
+  }
+
+
+  get focus(): boolean {
+    return this._focus;
+  }
+
+  set focus(value: boolean) {
+    this._focus = value;
   }
 }

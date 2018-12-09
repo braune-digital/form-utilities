@@ -1,5 +1,6 @@
 import {Component, HostBinding, Inject, Input} from '@angular/core';
 import {FormUtilitiesOptions} from '../../../form-utilities.module';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   moduleId: module.id,
@@ -19,10 +20,17 @@ export class FormAddonComponent {
     return this.position === 'prepend' ? this.options.classFormInputGroupPrepend : this.options.classFormInputGroupAppend;
   }
 
-  public constructor(@Inject('options') public _options: FormUtilitiesOptions) {
+  public constructor(
+    @Inject('options') public _options: FormUtilitiesOptions,
+    private _sanitizer: DomSanitizer
+  ) {
   }
 
   get options(): FormUtilitiesOptions {
     return this._options;
+  }
+
+  get addonString(): any {
+    return this._sanitizer.bypassSecurityTrustHtml(this.text);
   }
 }

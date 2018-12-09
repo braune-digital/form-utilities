@@ -1,3 +1,1 @@
-<span class="{{ options.classFormRequired }}" *ngIf="required">
-  {{ options.requiredString }}
-</span>
+<span class="{{ options.classFormRequired }}" *ngIf="required" [innerHTML]="requiredString"></span>

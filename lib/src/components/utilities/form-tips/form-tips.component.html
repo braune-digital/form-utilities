@@ -1,5 +1,5 @@
 <ng-container *ngIf="tips && tips.length">
   <span *ngFor="let tip of tips">
-    <i class="fas {{ tip.icon }}" [tooltip]="tip.tooltip"></i>
+    <i class="fas {{ tip.icon }}" popover="{{ tip.tooltip|translate }}"></i>
   </span>
 </ng-container>

@@ -1,4 +1,4 @@
-<div class="{{ options.classFormGroup }}">
+<div class="{{ options.classFormGroup }}" [ngClass]="{'focus': focus}">
 
   <div class="{{ options.classFromInput }}">
 
@@ -11,7 +11,7 @@
 
     </div>
 
-    <div class="{{ options.classFormInputGroup }}">
+    <div class="{{ inputGroupClass }}">
 
       <bd-form-addon [text]="prepend" position="prepend" *ngIf="prepend"></bd-form-addon>
 
@@ -23,6 +23,8 @@
              [attr.id]="uniqueId"
              [attr.maxlength]="maxLength"
              [attr.aria-label]="placeholder"
+             (focusout)="handleOnFocusOut($event.target.value)"
+             (focus)="handleOnFocus($event.target.value)"
              (change)="handleOnInputChange($event.target.value)"
              (keypress)="handleOnInputKeypress($event.target.value)"
              (keyup)="handleOnInputKeyup($event.target.value)"

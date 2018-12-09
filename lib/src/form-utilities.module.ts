@@ -26,7 +26,7 @@ import { QuillModule } from 'ngx-quill';
 import { RteComponent } from './components/rte/rte.component';
 import { AutosizeDirective } from './directives/autosize.directive';
 import {FormTipsComponent} from './components/utilities/form-tips/form-tips.component';
-import {TooltipModule} from 'ngx-bootstrap';
+import {PopoverModule, TooltipModule} from 'ngx-bootstrap';
 import {FormRequiredComponent} from './components/utilities/form-required/form-required.component';
 import {MaxLengthDirective} from './directives/max-length.directive';
 import {FormCounterComponent} from './components/utilities/form-counter/form-counter.component';
@@ -85,6 +85,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     CKEditorModule,
     TranslateModule,
     TooltipModule.forRoot(),
+    PopoverModule.forRoot(),
     BsDatepickerModule.forRoot(),
     TimepickerModule.forRoot(),
     QuillModule
@@ -144,7 +145,7 @@ export class FormUtilitiesModule {
       ngModule: FormUtilitiesModule,
       providers: [
         FormErrorService,
-        {provide: 'options', useValue: DefaultFormUtilitiesOptions},
+        {provide: 'options', useValue: Object.assign(DefaultFormUtilitiesOptions, options)},
         {
           provide: HTTP_INTERCEPTORS,
           useClass: FormErrorInterceptor,
