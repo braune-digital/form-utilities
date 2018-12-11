@@ -145,7 +145,7 @@ export class FormUtilitiesModule {
       ngModule: FormUtilitiesModule,
       providers: [
         FormErrorService,
-        {provide: 'options', useValue: Object.assign(DefaultFormUtilitiesOptions, options)},
+        {provide: 'options', useValue: options || DefaultFormUtilitiesOptions},
         {
           provide: HTTP_INTERCEPTORS,
           useClass: FormErrorInterceptor,

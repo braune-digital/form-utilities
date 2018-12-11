@@ -60,5 +60,8 @@ export class DatepickerComponent extends FormInputComponent implements ControlVa
   ngOnInit() {
     super.ngOnInit();
     this.langService.use(this.bsLang);
+    if (this.disabled) {
+      this.formControl.disable();
+    }
   }
 }

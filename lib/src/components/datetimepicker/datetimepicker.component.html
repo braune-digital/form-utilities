@@ -9,6 +9,7 @@
              bsDatepicker
              [bsConfig]="bsConfig"
              [placeholder]="placeholder"
+             [disabled]="disabled"
              [minDate]="bsMinDate"
              [maxDate]="bsMaxDate"
              [bsValue]="dateTime.date"
@@ -22,6 +23,7 @@
               [(ngModel)]="dateTime.time"
               (ngModelChange)="onTimeChange($event)"
               [showMeridian]="isMeridian"
+              [disabled]="disabled"
               [readonlyInput]="isDisabled"
       ></timepicker>
     </div>
