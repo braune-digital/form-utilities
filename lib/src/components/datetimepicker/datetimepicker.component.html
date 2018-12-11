@@ -9,12 +9,12 @@
              bsDatepicker
              [bsConfig]="bsConfig"
              [placeholder]="placeholder"
-             [disabled]="disabled"
              [minDate]="bsMinDate"
              [maxDate]="bsMaxDate"
              [bsValue]="dateTime.date"
              [(ngModel)]="dateTime.date"
-             [disabled]="isDisabled"
+             [isDisabled]="disabled"
+             [readonly]="disabled"
              (ngModelChange)="onDateChange($event)"
       />
     </div>
