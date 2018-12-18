@@ -1,5 +1,6 @@
 <button class="btn btn-progress {{ btnClass }}"
         [attr.type]="btnType"
+        [attr.form]="btnTargetForm"
         [disabled]="btnDisabled"
         [ngClass]="{'btn-loading': btnStateLoading, 'btn-onSuccess': btnStateSuccess}"
 >

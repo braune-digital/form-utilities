@@ -24,13 +24,13 @@ import {FormErrorsComponent} from './components/utilities/form-errors/form-error
 import {FormHelpComponent} from './components/utilities/form-help/form-help.component';
 import { QuillModule } from 'ngx-quill';
 import { RteComponent } from './components/rte/rte.component';
-import { AutosizeDirective } from './directives/autosize.directive';
 import {FormTipsComponent} from './components/utilities/form-tips/form-tips.component';
 import {PopoverModule, TooltipModule} from 'ngx-bootstrap';
 import {FormRequiredComponent} from './components/utilities/form-required/form-required.component';
 import {MaxLengthDirective} from './directives/max-length.directive';
 import {FormCounterComponent} from './components/utilities/form-counter/form-counter.component';
 import {FormAddonComponent} from './components/utilities/form-addon/form-addon.component';
+import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 
 export interface FormUtilitiesOptions {
   displayErrors: boolean;
@@ -88,6 +88,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     PopoverModule.forRoot(),
     BsDatepickerModule.forRoot(),
     TimepickerModule.forRoot(),
+    TextareaAutosizeModule,
     QuillModule
   ],
   declarations: [
@@ -102,7 +103,6 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     CheckboxComponent,
     DatetimepickerComponent,
 
-    AutosizeDirective,
     MaxLengthDirective,
 
     FormLabelComponent,
@@ -126,7 +126,6 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     CheckboxComponent,
     DatetimepickerComponent,
 
-    AutosizeDirective,
     MaxLengthDirective,
 
     FormLabelComponent,
@@ -140,7 +139,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
 })
 
 export class FormUtilitiesModule {
-  static forRoot(options: FormUtilitiesOptions = { displayErrors: true }): ModuleWithProviders {
+  static forRoot(options: FormUtilitiesOptions = DefaultFormUtilitiesOptions): ModuleWithProviders {
     return {
       ngModule: FormUtilitiesModule,
       providers: [

@@ -23,4 +23,9 @@ export class AppComponent {
       'checkbox': [null, Validators.required]
     });
   }
+
+  onSubmit(){
+    console.log('Form submitted');
+    alert('Form submitted');
+  }
 }

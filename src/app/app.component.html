@@ -21,7 +21,7 @@
 
   <h1>Components Test</h1>
 
-  <form [formGroup]="form">
+  <form [formGroup]="form" id="test" (submit)="onSubmit()">
 
     <h2>Input</h2>
 
@@ -106,8 +106,8 @@
                  help="help text block"></bd-checkbox>
 
     <h2>Buttons</h2>
-    <bd-progress-button [btnDisabled]="form.invalid" type="submit">Button submit</bd-progress-button>
   </form>
+  <bd-progress-button [btnTargetForm]="'test'" [btnDisabled]="form.invalid" btnType="submit">Button submit</bd-progress-button>
 </div>
 
 

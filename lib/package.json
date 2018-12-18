@@ -1,10 +1,10 @@
 {
   "$schema": "../node_modules/ng-packagr/package.schema.json",
   "name": "@braune-digital/form-utilities",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Custom components to use in angular projects. All components are aware of form-errors when using symfony forms.",
   "author": "Braune Digital <mail@braune-digital.com>",
-  "license": "GNU",
+  "license": "MIT",
   "repository": "git@github.com:braune-digital/form-utilities.git",
   "peerDependencies": {
     "@angular/core": "^5.2.0",
@@ -14,8 +14,8 @@
     "ng2-ckeditor": "^1.1.4",
     "@ngx-translate/core": "^9.1.1",
     "ngx-bootstrap": "^2.0.0",
-    "ngx-autosize": "1.2.4",
-    "ngx-quill": "^2.0.0"
+    "ngx-quill": "^2.0.0",
+    "ngx-textarea-autosize": "^2.0.0"
   },
   "ngPackage": {
     "lib": {

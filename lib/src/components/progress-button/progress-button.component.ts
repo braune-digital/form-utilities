@@ -10,6 +10,7 @@ export class ProgressButtonComponent {
 
   @Input() btnClass = 'btn-primary';
   @Input() btnType = 'button';
+  @Input() btnTargetForm = null;
   @Input() btnStateLoading = false;
   @Input() btnStateSuccess = false;
   @Input() btnDisabled = false;
