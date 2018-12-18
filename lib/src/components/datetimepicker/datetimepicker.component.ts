@@ -103,5 +103,8 @@ export class DatetimepickerComponent extends FormInputComponent implements Contr
   ngOnInit() {
     super.ngOnInit();
     this.langService.use(this.bsLang);
+    if (this.disabled) {
+      this.formControl.disable();
+    }
   }
 }

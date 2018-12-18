@@ -3,6 +3,7 @@ import { ControlValueAccessor, FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 import { FormErrorService } from '../services/form-error.service';
 import { FormUtilitiesOptions } from '../form-utilities.module';
+import {TipsOptions} from './utilities/models';
 
 export abstract class FormInputComponent implements OnInit, OnDestroy, ControlValueAccessor {
 
@@ -21,12 +22,36 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   @Input()
   public displayErrors = false;
 
+  @Input()
+  public requiredMarker = false;
+
+  @Input()
+  tips: Array<TipsOptions>;
+
+  @Input()
+  help: string;
+
+  @Input()
+  maxLength: number;
+
+  @Input()
+  append: string;
+
+  @Input()
+  prepend: string;
+
+  @Input()
+  disabled = false;
+
+  uniqueId =  '_' + Math.random().toString(36).substr(2, 9);
+
+  private _focus: boolean;
+
   get errors(): Array<string> {
     let errors = [];
     if (
       (this.options.displayErrors || this.displayErrors)
       && this.formControl
-      && !this.formControl.pristine
       && this.formControl.touched
       && this.formControl.errors
     ) {
@@ -42,10 +67,10 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   }
 
 
-  protected constructor(@Inject('options') protected _options: FormUtilitiesOptions) {
-  }
+  protected constructor(@Inject('options') protected _options: FormUtilitiesOptions) {}
 
   ngOnInit(): void {
+
     // Tell the
     this.formErrorServiceSubscription = this.formErrorService.propertyError.subscribe(error => {
       // todo - @Jannik - do not set this on every control
@@ -81,11 +106,30 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
     this.input.setDisabledState(isDisabled);
   }
 
+  get inputGroupClass(): string {
+    if (this.prepend) {
+      return this._options.classFormInputGroup + ' ' + this._options.classFormInputGroup + '--prepend';
+    }
+    if (this.append) {
+      return this._options.classFormInputGroup + ' ' + this._options.classFormInputGroup + '--append';
+    }
+    return '';
+  }
+
   private getErrorKey(propertyPath: string): string {
     return FormInputComponent.REMOTE_ERROR_PREFIX + propertyPath.split('.').pop();
   }
 
   get options(): FormUtilitiesOptions {
     return this._options;
+  }
+
+
+  get focus(): boolean {
+    return this._focus;
+  }
+
+  set focus(value: boolean) {
+    this._focus = value;
   }
 }

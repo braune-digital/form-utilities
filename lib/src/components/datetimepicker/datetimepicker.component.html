@@ -1,4 +1,4 @@
-<div class="{{ options.classFormGroup }}">
+<div class="{{ options.classFormGroup }}" [ngClass]="{'has-errors': errors.length}">
   <bd-form-label [label]="label"></bd-form-label>
 
   <div class="row">
@@ -13,7 +13,8 @@
              [maxDate]="bsMaxDate"
              [bsValue]="dateTime.date"
              [(ngModel)]="dateTime.date"
-             [disabled]="isDisabled"
+             [isDisabled]="disabled"
+             [readonly]="disabled"
              (ngModelChange)="onDateChange($event)"
       />
     </div>
@@ -22,6 +23,7 @@
               [(ngModel)]="dateTime.time"
               (ngModelChange)="onTimeChange($event)"
               [showMeridian]="isMeridian"
+              [disabled]="disabled"
               [readonlyInput]="isDisabled"
       ></timepicker>
     </div>

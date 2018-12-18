@@ -12,8 +12,7 @@ import { FormUtilitiesOptions } from '../../form-utilities.module';
     multi: true
   }],
   selector: 'bd-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.scss']
+  templateUrl: './input.component.html'
 })
 export class InputComponent extends FormInputComponent implements ControlValueAccessor {
   @ViewChild(DefaultValueAccessor)
@@ -21,9 +20,6 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
 
   @Input()
   label: string;
-
-  @Input()
-  help: string;
 
   @Input()
   inputClass: string;
@@ -41,9 +37,6 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
   disableErrors = false;
 
   @Input()
-  disabled = false;
-
-  @Input()
   formControl: FormControl;
 
   @Output()
@@ -54,6 +47,12 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
 
   @Output()
   onInputKeyup: EventEmitter<string> = new EventEmitter();
+
+  @Output()
+  onFocus: EventEmitter<string> = new EventEmitter();
+
+  @Output()
+  onFocusOut: EventEmitter<string> = new EventEmitter();
 
   constructor(@Inject('options') protected _options:FormUtilitiesOptions, public formErrorService: FormErrorService) {
     super(_options);
@@ -69,5 +68,15 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
 
   handleOnInputKeyup(value: string): void {
     this.onInputKeyup.emit(value);
+  }
+
+  handleOnFocus(value: string): void {
+    this.focus = true;
+    this.onFocus.emit(value);
+  }
+
+  handleOnFocusOut(value: string): void {
+    this.focus = false;
+    this.onFocusOut.emit(value);
   }
 }

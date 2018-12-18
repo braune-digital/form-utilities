@@ -18,24 +18,17 @@ import {noop} from 'rxjs/util/noop';
     multi: true
   }],
   selector: 'bd-checkbox',
-  templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.scss']
+  templateUrl: './checkbox.component.html'
 })
 export class CheckboxComponent extends FormInputComponent implements ControlValueAccessor {
   @ViewChild(CheckboxControlValueAccessor)
   input: CheckboxControlValueAccessor;
-
   @Input()
   label: string;
-
-  @Input()
-  help: string;
-
-  @Input()
-  inputClass: string;
-
   @Input()
   placeholder = '';
+  @Input()
+  inputClass: string;
 
   @Input()
   disableErrors = false;
@@ -49,7 +42,8 @@ export class CheckboxComponent extends FormInputComponent implements ControlValu
   @Output()
   onChange: EventEmitter<boolean> = new EventEmitter();
 
-  @Input() isChecked = false;
+  @Input()
+  isChecked = false;
 
   constructor(@Inject('options') protected _options:FormUtilitiesOptions, public formErrorService: FormErrorService) {
     super(_options);
