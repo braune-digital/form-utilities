@@ -10,26 +10,25 @@ import { FormErrorInterceptor } from './interceptors/form-error.interceptor';
 import { InputComponent } from './components/input/input.component';
 import { ProgressButtonComponent } from './components/progress-button/progress-button.component';
 import { TextareaComponent } from './components/textarea/textarea.component';
-import { CKEditorModule } from 'ng2-ckeditor';
 import { CkeditorComponent } from './components/ckeditor/ckeditor.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
 import { DaterangeComponent } from './components/daterange/daterange.component';
-import {CheckboxComponent} from './components/checkbox/checkbox.component';
-import {DatetimepickerComponent} from './components/datetimepicker/datetimepicker.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { DatetimepickerComponent } from './components/datetimepicker/datetimepicker.component';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
-import {FormLabelComponent} from './components/utilities/form-label/form-label.component';
-import {FormErrorsComponent} from './components/utilities/form-errors/form-errors.component';
-import {FormHelpComponent} from './components/utilities/form-help/form-help.component';
+import { FormLabelComponent } from './components/utilities/form-label/form-label.component';
+import { FormErrorsComponent } from './components/utilities/form-errors/form-errors.component';
+import { FormHelpComponent } from './components/utilities/form-help/form-help.component';
 import { QuillModule } from 'ngx-quill';
 import { RteComponent } from './components/rte/rte.component';
-import {FormTipsComponent} from './components/utilities/form-tips/form-tips.component';
-import {PopoverModule, TooltipModule} from 'ngx-bootstrap';
-import {FormRequiredComponent} from './components/utilities/form-required/form-required.component';
-import {MaxLengthDirective} from './directives/max-length.directive';
-import {FormCounterComponent} from './components/utilities/form-counter/form-counter.component';
-import {FormAddonComponent} from './components/utilities/form-addon/form-addon.component';
+import { FormTipsComponent } from './components/utilities/form-tips/form-tips.component';
+import { PopoverModule, TooltipModule } from 'ngx-bootstrap';
+import { FormRequiredComponent } from './components/utilities/form-required/form-required.component';
+import { MaxLengthDirective } from './directives/max-length.directive';
+import { FormCounterComponent } from './components/utilities/form-counter/form-counter.component';
+import { FormAddonComponent } from './components/utilities/form-addon/form-addon.component';
 import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 
 export interface FormUtilitiesOptions {
@@ -82,7 +81,6 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     FormsModule,
     ReactiveFormsModule,
     NgSelectModule,
-    CKEditorModule,
     TranslateModule,
     TooltipModule.forRoot(),
     PopoverModule.forRoot(),
@@ -144,7 +142,7 @@ export class FormUtilitiesModule {
       ngModule: FormUtilitiesModule,
       providers: [
         FormErrorService,
-        {provide: 'options', useValue: options || DefaultFormUtilitiesOptions},
+        { provide: 'options', useValue: options || DefaultFormUtilitiesOptions },
         {
           provide: HTTP_INTERCEPTORS,
           useClass: FormErrorInterceptor,
