@@ -22,8 +22,12 @@ export class FormCounterComponent {
     return this._options;
   }
 
-  public getMaxLenghtLabel() {
-    const length = this.maxLength - this.form.value.length;
+  public getMaxLengthLabel() {
+    let value = this.form.value;
+    if(value === null || value === 'undefined'){
+      value = '';
+    }
+    const length = this.maxLength - String(value).length;
     return this._options.maxLengthString.replace('%s', length.toString());
   }
 }
