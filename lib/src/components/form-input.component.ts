@@ -23,6 +23,9 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   public displayErrors = false;
 
   @Input()
+  public ignoreTouchedForErrors = false;
+
+  @Input()
   public requiredMarker = false;
 
   @Input()
@@ -52,7 +55,7 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
     if (
       (this.options.displayErrors || this.displayErrors)
       && this.formControl
-      && this.formControl.touched
+      && (this.formControl.touched || this.ignoreTouchedForErrors)
       && this.formControl.errors
     ) {
       return Object.keys(this.formControl.errors).map(key => {
@@ -70,12 +73,7 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   protected constructor(@Inject('options') protected _options: FormUtilitiesOptions) {}
 
   ngOnInit(): void {
-
-    // Tell the
     this.formErrorServiceSubscription = this.formErrorService.propertyError.subscribe(error => {
-      // todo - @Jannik - do not set this on every control
-      // todo - Maybe use a custom formBuilder and register the parent form on the formErrorService
-      // todo - For performance use onPush-strategy if above solution is not yet implemented
       if (this.formControl && this.formControl.root) {
         const control = this.formControl.root.get(error.property_path);
         const errorKey = this.getErrorKey(error.property_path);

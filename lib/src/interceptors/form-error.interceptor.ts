@@ -17,17 +17,32 @@ export class FormErrorInterceptor implements HttpInterceptor {
         if (err.status === 400) {
           const errorObject = err.error;
           if (errorObject.errors && errorObject.errors.children) {
-            const objectKeys = Object.keys(errorObject.errors.children);
-            objectKeys.forEach((key) => {
-              const property = errorObject.errors.children[key];
-              if (property.errors && property.errors.length > 0) {
-                property.errors.forEach((message: any) => {
-                  this.formErrorService.propertyError.next({property_path: key, message: message});
-                });
-              }
-            });
+            this.walkRecursive(errorObject.errors.children, []);
           }
         }
+      }
+    });
+  }
+
+  /**
+   * @param children
+   * @param keys
+   */
+  walkRecursive(children: any, keys: string[]): void {
+    const objectKeys = Object.keys(children);
+    objectKeys.forEach((key) => {
+      const property = children[key];
+      if (property.errors && property.errors.length > 0) {
+        property.errors.forEach((message: any) => {
+          const path = (keys.length) ? keys.join('.') + '.' + key : key;
+          this.formErrorService.propertyError.next({property_path: path, message: message});
+        });
+      }
+      if (property.children) {
+        keys.push(key);
+        this.walkRecursive(property.children, keys);
+      } else {
+        keys.splice(keys.length - 1, 1);
       }
     });
   }

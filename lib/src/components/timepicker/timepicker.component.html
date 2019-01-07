@@ -1,0 +1,24 @@
+<div class="{{ options.classFormGroup }}" [ngClass]="{'has-errors': errors.length}">
+
+  <div class="{{ options.classFromInput }}">
+
+    <div class="{{ options.classFromLegend }}">
+
+      <bd-form-label [label]="label" [inputId]="uniqueId"></bd-form-label>
+      <bd-form-required [required]="requiredMarker" *ngIf="requiredMarker"></bd-form-required>
+      <bd-form-tips [tips]="tips" *ngIf="tips"></bd-form-tips>
+
+    </div>
+
+    <div class="{{ inputGroupClass }}">
+
+      <bd-form-addon [text]="prepend" position="prepend" *ngIf="prepend"></bd-form-addon>
+      <timepicker [disabled]="disabled" [formControl]="formControl" [showMeridian]="isMeridian"></timepicker>
+      <bd-form-addon [text]="append" position="append" *ngIf="append"></bd-form-addon>
+
+    </div>
+  </div>
+
+  <bd-form-errors [errors]="errors" *ngIf="errors"></bd-form-errors>
+  <bd-form-help [label]="help" *ngIf="help"></bd-form-help>
+</div>

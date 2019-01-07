@@ -30,6 +30,7 @@ import { MaxLengthDirective } from './directives/max-length.directive';
 import { FormCounterComponent } from './components/utilities/form-counter/form-counter.component';
 import { FormAddonComponent } from './components/utilities/form-addon/form-addon.component';
 import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
+import {TimepickerComponent} from './components/timepicker/timepicker.component';
 
 export interface FormUtilitiesOptions {
   displayErrors: boolean;
@@ -109,7 +110,8 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     FormTipsComponent,
     FormRequiredComponent,
     FormCounterComponent,
-    FormAddonComponent
+    FormAddonComponent,
+    TimepickerComponent
   ],
   exports: [
     NgSelectModule,
@@ -132,7 +134,8 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     FormTipsComponent,
     FormRequiredComponent,
     FormCounterComponent,
-    FormAddonComponent
+    FormAddonComponent,
+    TimepickerComponent
   ],
 })
 

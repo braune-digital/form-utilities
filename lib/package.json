@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/ng-packagr/package.schema.json",
   "name": "@braune-digital/form-utilities",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Custom components to use in angular projects. All components are aware of form-errors when using symfony forms.",
   "author": "Braune Digital <mail@braune-digital.com>",
   "license": "MIT",
