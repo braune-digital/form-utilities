@@ -38,8 +38,9 @@ export class FormErrorInterceptor implements HttpInterceptor {
           this.formErrorService.propertyError.next({property_path: path, message: message});
         });
       }
+
+      keys.push(key);
       if (property.children) {
-        keys.push(key);
         this.walkRecursive(property.children, keys);
       } else {
         keys.splice(keys.length - 1, 1);
