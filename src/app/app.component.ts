@@ -28,4 +28,8 @@ export class AppComponent {
     console.log('Form submitted');
     alert('Form submitted');
   }
+
+  log(event){
+    console.log(event, new Date());
+  }
 }

@@ -1,20 +1,22 @@
-<button class="btn btn-progress {{ btnClass }}"
-        [attr.type]="btnType"
-        [attr.form]="btnTargetForm"
-        [disabled]="btnDisabled"
-        [ngClass]="{'btn-loading': btnStateLoading, 'btn-onSuccess': btnStateSuccess}"
->
-  <div class="btn-loading">
-        <span class='loader'>
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
-  </div>
-  <div class="btn-text">
-    <ng-content></ng-content>
-  </div>
-  <div class="btn-onSuccess">
-    <i class="fa fa-check"></i>
-  </div>
-</button>
+<div (click)="clicked.emit(null)">
+  <button class="btn btn-progress {{ btnClass }}"
+          [attr.type]="btnType"
+          [attr.form]="btnTargetForm"
+          [disabled]="btnDisabled"
+          [ngClass]="{'btn-loading': btnStateLoading, 'btn-onSuccess': btnStateSuccess}"
+  >
+    <div class="btn-loading">
+          <span class='loader'>
+              <span></span>
+              <span></span>
+              <span></span>
+          </span>
+    </div>
+    <div class="btn-text">
+      <ng-content></ng-content>
+    </div>
+    <div class="btn-onSuccess">
+      <i class="fa fa-check"></i>
+    </div>
+  </button>
+</div>

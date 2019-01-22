@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -14,5 +14,5 @@ export class ProgressButtonComponent {
   @Input() btnStateLoading = false;
   @Input() btnStateSuccess = false;
   @Input() btnDisabled = false;
-
+  @Output('clicked') clicked: EventEmitter<null> = new EventEmitter();
 }

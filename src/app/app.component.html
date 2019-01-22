@@ -107,7 +107,7 @@
 
     <h2>Buttons</h2>
   </form>
-  <bd-progress-button [btnTargetForm]="'test'" [btnDisabled]="form.invalid" btnType="submit">Button submit</bd-progress-button>
+  <bd-progress-button [btnTargetForm]="'test'" [btnDisabled]="form.invalid" (clicked)="log('EVENT button click')" btnType="submit">Button submit</bd-progress-button>
 </div>
 
 
