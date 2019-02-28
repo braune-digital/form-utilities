@@ -1,38 +1,32 @@
-<div class="{{ options.classFormGroup }}" [ngClass]="{'has-errors': errors.length}">
-  <bd-form-label [label]="label"></bd-form-label>
+<!--<div class="{{ options.classFormGroup }}" [ngClass]="{'has-errors': errors.length}">-->
+  <!--<bd-form-label [label]="label"></bd-form-label>-->
 
-  <input #dp
-         type="text"
-         class="{{ options.classFormControl }} {{ inputClass }}"
-         bsDaterangepicker
-         [bsConfig]="bsConfig"
-         [formControl]="formControl"
-         [placeholder]="placeholder"
-         [minDate]="bsMinDate"
-         [maxDate]="bsMaxDate"
-  >
+  <!--<input #dp-->
+         <!--type="text"-->
+         <!--class="{{ options.classFormControl }} {{ inputClass }}"-->
+         <!--bsDaterangepicker-->
+         <!--[bsConfig]="bsConfig"-->
+         <!--[formControl]="formControl"-->
+         <!--[placeholder]="placeholder"-->
+         <!--[minDate]="bsMinDate"-->
+         <!--[maxDate]="bsMaxDate"-->
+  <!--&gt;-->
 
-  <bd-form-errors [errors]="errors"></bd-form-errors>
-  <bd-form-help [label]="help"></bd-form-help>
+  <!--<bd-form-errors [errors]="errors"></bd-form-errors>-->
+  <!--<bd-form-help [label]="help"></bd-form-help>-->
 
-</div>
+<!--</div>-->
 
 <div class="{{ options.classFormGroup }}">
-
   <div class="{{ options.classFromInput }}">
-
     <div class="{{ options.classFromLegend }}">
-
       <bd-form-label [label]="label" [inputId]="uniqueId"></bd-form-label>
       <bd-form-required [required]="requiredMarker" *ngIf="requiredMarker"></bd-form-required>
       <bd-form-tips [tips]="tips" *ngIf="tips"></bd-form-tips>
-
     </div>
 
     <div class="{{ inputGroupClass }}">
-
       <bd-form-addon [text]="prepend" position="prepend" *ngIf="prepend"></bd-form-addon>
-
       <input #dp
              type="text"
              class="{{ options.classFormControl }} {{ inputClass }}"
@@ -45,8 +39,8 @@
              [attr.aria-label]="placeholder"
              [minDate]="bsMinDate"
              [maxDate]="bsMaxDate"
+             (bsValueChange)="handleOutputDates($event)"
       >
-
       <bd-form-addon [text]="append" position="append" *ngIf="append"></bd-form-addon>
     </div>
   </div>

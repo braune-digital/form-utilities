@@ -1,9 +1,9 @@
 import { FormInputComponent } from '../form-input.component';
 import { ControlValueAccessor, DefaultValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { Component, forwardRef, Inject, Input, OnInit, ViewChild } from '@angular/core';
+import {Component, EventEmitter, forwardRef, Inject, Input, OnInit, Output, ViewChild} from '@angular/core';
 import { FormErrorService } from '../../services/form-error.service';
 import { FormUtilitiesOptions } from '../../form-utilities.module';
-import { BsDatepickerConfig, BsDaterangepickerDirective, BsLocaleService } from 'ngx-bootstrap';
+import { BsDaterangepickerConfig, BsDaterangepickerDirective, BsLocaleService} from 'ngx-bootstrap';
 
 @Component({
   moduleId: module.id,
@@ -40,10 +40,10 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
   formControl: FormControl;
 
   @Input()
-  bsConfig: BsDatepickerConfig = new BsDatepickerConfig();
+  bsConfig: BsDaterangepickerConfig = new BsDaterangepickerConfig();
 
   @Input()
-  bsLang: string = 'en';
+  lang: string;
 
   @Input()
   bsMaxDate: Date = null;
@@ -54,12 +54,20 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
   @ViewChild('dp')
   daterange: BsDaterangepickerDirective;
 
+  @Output()
+  datesPicked: EventEmitter<Date> = new EventEmitter();
+
   constructor(@Inject('options') protected _options: FormUtilitiesOptions, public formErrorService: FormErrorService, public langService: BsLocaleService) {
     super(_options);
+    console.log('dateRAngecomp:' + this.lang);
   }
 
   ngOnInit() {
     super.ngOnInit();
-    this.langService.use(this.bsLang);
+    this.lang ? this.langService.use(this.lang) : this.langService.use('en');
+  }
+
+  handleOutputDates(event: any){
+    this.datesPicked.emit(event);
   }
 }

@@ -32,6 +32,12 @@ import { FormAddonComponent } from './components/utilities/form-addon/form-addon
 import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 import {TimepickerComponent} from './components/timepicker/timepicker.component';
 
+/* Define DE Locale for german Datepicker version */
+import { defineLocale } from 'ngx-bootstrap/chronos';
+import { deLocale } from 'ngx-bootstrap/locale';
+defineLocale('de', deLocale);
+
+
 export interface FormUtilitiesOptions {
   displayErrors: boolean;
   classFormGroup?: string;
