@@ -59,7 +59,6 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
 
   constructor(@Inject('options') protected _options: FormUtilitiesOptions, public formErrorService: FormErrorService, public langService: BsLocaleService) {
     super(_options);
-    console.log('dateRAngecomp:' + this.lang);
   }
 
   ngOnInit() {

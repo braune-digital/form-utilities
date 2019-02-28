@@ -54,7 +54,7 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
   @Output()
   onFocusOut: EventEmitter<string> = new EventEmitter();
 
-  constructor(@Inject('options') protected _options:FormUtilitiesOptions, public formErrorService: FormErrorService) {
+  constructor(@Inject('options') protected _options: FormUtilitiesOptions, public formErrorService: FormErrorService) {
     super(_options);
   }
 
