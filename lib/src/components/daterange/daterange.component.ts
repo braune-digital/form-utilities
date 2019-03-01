@@ -37,7 +37,7 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
   disableErrors = false;
 
   @Input()
-  formControl: FormControl;
+  formControl: FormControl = new FormControl('');
 
   @Input()
   bsConfig: BsDaterangepickerConfig = new BsDaterangepickerConfig();
@@ -62,11 +62,15 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
   }
 
   ngOnInit() {
+    if(!this.formControl){
+      this.formControl = new FormControl('');
+    }
     super.ngOnInit();
     this.lang ? this.langService.use(this.lang) : this.langService.use('en');
   }
 
   handleOutputDates(event: any){
+
     this.datesPicked.emit(event);
   }
 }
