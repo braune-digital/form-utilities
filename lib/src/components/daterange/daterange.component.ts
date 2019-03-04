@@ -13,8 +13,7 @@ import { BsDaterangepickerConfig, BsDaterangepickerDirective, BsLocaleService} f
     multi: true
   }],
   selector: 'bd-daterange',
-  templateUrl: './daterange.component.html',
-  styleUrls: ['./daterange.component.scss']
+  templateUrl: './daterange.component.html'
 })
 export class DaterangeComponent extends FormInputComponent implements ControlValueAccessor, OnInit {
 
@@ -29,6 +28,9 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
 
   @Input()
   inputClass: string;
+
+  @Input()
+  triggers = 'click focus';
 
   @Input()
   placeholder = '';
@@ -65,9 +67,6 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
   }
 
   ngOnInit() {
-    if(!this.formControl) {
-      this.formControl = new FormControl('');
-    }
     super.ngOnInit();
     this.bsLang ? this.langService.use(this.bsLang) : this.langService.use('en');
   }

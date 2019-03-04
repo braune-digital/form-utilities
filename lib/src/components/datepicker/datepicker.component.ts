@@ -39,7 +39,7 @@ export class DatepickerComponent extends FormInputComponent implements ControlVa
   bsValue: Date;
 
   @Input()
-  formControl: FormControl;
+  formControl: FormControl = new FormControl('');;
 
   @Input()
   bsConfig: BsDatepickerConfig = new BsDatepickerConfig();
