@@ -43,7 +43,7 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
   bsConfig: BsDaterangepickerConfig = new BsDaterangepickerConfig();
 
   @Input()
-  bsLang = 'en';
+  bsLang: string;
 
   @Input()
   bsMaxDate: Date = null;
