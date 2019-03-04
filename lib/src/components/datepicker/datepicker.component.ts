@@ -46,7 +46,7 @@ export class DatepickerComponent extends FormInputComponent implements ControlVa
   bsConfig: BsDatepickerConfig = new BsDatepickerConfig();
 
   @Input()
-  bsLang: string = 'en';
+  bsLang = 'en';
 
   @Input()
   bsMaxDate: Date = null;
@@ -57,12 +57,15 @@ export class DatepickerComponent extends FormInputComponent implements ControlVa
   @ViewChild('dp')
   datepicker: BsDaterangepickerDirective;
 
-  constructor(@Inject('options') protected _options: FormUtilitiesOptions, public formErrorService: FormErrorService, public langService: BsLocaleService) {
+  constructor(@Inject('options') protected _options: FormUtilitiesOptions,
+              public formErrorService: FormErrorService,
+              public langService: BsLocaleService
+  ) {
     super(_options);
   }
 
   ngOnInit() {
     super.ngOnInit();
-    this.langService.use(this.bsLang);
+    this.bsLang ? this.langService.use(this.bsLang) : this.langService.use('en');
   }
 }

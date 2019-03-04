@@ -43,7 +43,7 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
   bsConfig: BsDaterangepickerConfig = new BsDaterangepickerConfig();
 
   @Input()
-  lang: string;
+  bsLang = 'en';
 
   @Input()
   bsMaxDate: Date = null;
@@ -57,16 +57,19 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
   @Output()
   datesPicked: EventEmitter<Date> = new EventEmitter();
 
-  constructor(@Inject('options') protected _options: FormUtilitiesOptions, public formErrorService: FormErrorService, public langService: BsLocaleService) {
+  constructor(@Inject('options') protected _options: FormUtilitiesOptions,
+              public formErrorService: FormErrorService,
+              public langService: BsLocaleService
+  ) {
     super(_options);
   }
 
   ngOnInit() {
-    if(!this.formControl){
+    if(!this.formControl) {
       this.formControl = new FormControl('');
     }
     super.ngOnInit();
-    this.lang ? this.langService.use(this.lang) : this.langService.use('en');
+    this.bsLang ? this.langService.use(this.bsLang) : this.langService.use('en');
   }
 
   handleOutputDates(event: any){
