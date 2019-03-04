@@ -22,12 +22,28 @@
              [formControl]="formControl"
              [placeholder]="placeholder"
              [attr.id]="uniqueId"
-             [triggers]="triggers"
              [attr.maxlength]="maxLength"
              [attr.aria-label]="placeholder"
              [minDate]="bsMinDate"
              [maxDate]="bsMaxDate"
              [bsValue]="bsValue">
+
+
+      <!-- Removed triggers: causes instantly closing in clicks.  -->
+      <!--<input #dp-->
+             <!--type="text"-->
+             <!--class="{{ options.classFormControl }} {{ inputClass }}"-->
+             <!--bsDatepicker-->
+             <!--[bsConfig]="bsConfig"-->
+             <!--[formControl]="formControl"-->
+             <!--[placeholder]="placeholder"-->
+             <!--[attr.id]="uniqueId"-->
+             <!--[triggers]="triggers"-->
+             <!--[attr.maxlength]="maxLength"-->
+             <!--[attr.aria-label]="placeholder"-->
+             <!--[minDate]="bsMinDate"-->
+             <!--[maxDate]="bsMaxDate"-->
+             <!--[bsValue]="bsValue">-->
 
       <bd-form-addon [text]="append" position="append" *ngIf="append"></bd-form-addon>
 

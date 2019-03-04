@@ -26,8 +26,9 @@ export class DatepickerComponent extends FormInputComponent implements ControlVa
   @Input()
   inputClass: string;
 
-  @Input()
-  triggers: string = 'click focus';
+  // removed 'triggers', causes instantly closing on click in YWD
+  // @Input()
+  // triggers: string = 'click focus';
 
   @Input()
   placeholder = '';
