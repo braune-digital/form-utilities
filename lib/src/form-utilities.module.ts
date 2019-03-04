@@ -30,11 +30,12 @@ import { MaxLengthDirective } from './directives/max-length.directive';
 import { FormCounterComponent } from './components/utilities/form-counter/form-counter.component';
 import { FormAddonComponent } from './components/utilities/form-addon/form-addon.component';
 import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
-import {TimepickerComponent} from './components/timepicker/timepicker.component';
+import { TimepickerComponent } from './components/timepicker/timepicker.component';
 
 /* Define DE Locale for german Datepicker version */
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { deLocale } from 'ngx-bootstrap/locale';
+
 defineLocale('de', deLocale);
 
 
