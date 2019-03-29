@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import 'rxjs/add/operator/do';
-import { Observable } from 'rxjs/Observable';
+
+import { Observable } from 'rxjs';
 import { FormErrorService } from '../services/form-error.service';
+import { tap } from 'rxjs/operators';
 
 @Injectable()
 export class FormErrorInterceptor implements HttpInterceptor {
@@ -11,17 +12,20 @@ export class FormErrorInterceptor implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    return next.handle(req).do(() => {
-    }, (err: any) => {
-      if (err instanceof HttpErrorResponse) {
-        if (err.status === 400) {
-          const errorObject = err.error;
-          if (errorObject.errors && errorObject.errors.children) {
-            this.walkRecursive(errorObject.errors.children, []);
+    return next.handle(req).pipe(
+      tap(() => {
+        }, (err: any) => {
+          if (err instanceof HttpErrorResponse) {
+            if (err.status === 400) {
+              const errorObject = err.error;
+              if (errorObject.errors && errorObject.errors.children) {
+                this.walkRecursive(errorObject.errors.children, []);
+              }
+            }
           }
         }
-      }
-    });
+      )
+    );
   }
 
   /**

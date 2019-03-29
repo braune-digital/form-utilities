@@ -8,7 +8,7 @@ import {
 import {Component, EventEmitter, forwardRef, Inject, Input, Output, ViewChild} from '@angular/core';
 import { FormErrorService } from '../../services/form-error.service';
 import { FormUtilitiesOptions } from '../../form-utilities.module';
-import {noop} from 'rxjs/util/noop';
+import {noop} from 'rxjs';
 
 @Component({
   moduleId: module.id,
