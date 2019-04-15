@@ -39,6 +39,9 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
   @Input()
   formControl: FormControl;
 
+  @Input()
+  icon: string;
+
   @Output()
   onInputKeypress: EventEmitter<string> = new EventEmitter();
 
@@ -53,6 +56,9 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
 
   @Output()
   onFocusOut: EventEmitter<string> = new EventEmitter();
+
+  @Output()
+  onIconClicked: EventEmitter<string> = new EventEmitter();
 
   constructor(@Inject('options') protected _options: FormUtilitiesOptions, public formErrorService: FormErrorService) {
     super(_options);
@@ -78,5 +84,9 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
   handleOnFocusOut(value: string): void {
     this.focus = false;
     this.onFocusOut.emit(value);
+  }
+
+  handleIconClicked(event: any): void {
+    this.onIconClicked.emit(event);
   }
 }

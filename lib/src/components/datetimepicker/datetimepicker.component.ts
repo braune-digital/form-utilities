@@ -14,8 +14,7 @@ import {Time} from 'ngx-bootstrap/timepicker/timepicker.models';
     multi: true
   }],
   selector: 'bd-datetimepicker',
-  templateUrl: './datetimepicker.component.html',
-  styleUrls: ['./datetimepicker.component.scss']
+  templateUrl: './datetimepicker.component.html'
 })
 export class DatetimepickerComponent extends FormInputComponent implements ControlValueAccessor, OnInit {
 
@@ -62,6 +61,11 @@ export class DatetimepickerComponent extends FormInputComponent implements Contr
 
   @Input()
   isMeridian = false;
+
+  @Input()
+  showSpinners = false;
+
+
 
   onChange: (_: any) => void;
   onTouched: () => void;

@@ -35,6 +35,7 @@ import { TimepickerComponent } from './components/timepicker/timepicker.componen
 /* Define DE Locale for german Datepicker version */
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { deLocale } from 'ngx-bootstrap/locale';
+import {FormLabelIconComponent} from './components/utilities/form-label-icon/form-label-icon.component';
 
 defineLocale('de', deLocale);
 
@@ -112,6 +113,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     MaxLengthDirective,
 
     FormLabelComponent,
+    FormLabelIconComponent,
     FormErrorsComponent,
     FormHelpComponent,
     FormTipsComponent,
@@ -136,6 +138,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     MaxLengthDirective,
 
     FormLabelComponent,
+    FormLabelIconComponent,
     FormErrorsComponent,
     FormHelpComponent,
     FormTipsComponent,

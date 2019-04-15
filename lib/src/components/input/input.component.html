@@ -8,7 +8,7 @@
       <bd-form-required [required]="requiredMarker" *ngIf="requiredMarker"></bd-form-required>
       <bd-form-tips [tips]="tips" *ngIf="tips"></bd-form-tips>
       <bd-form-counter [maxLength]="maxLength" [form]="formControl" *ngIf="maxLength && options.counterBefore"></bd-form-counter>
-
+      <bd-form-label-icon [icon]="icon" (click)="handleIconClicked($event)"></bd-form-label-icon>
     </div>
 
     <div class="{{ inputGroupClass }}">
