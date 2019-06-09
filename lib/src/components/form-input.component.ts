@@ -29,6 +29,12 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   public requiredMarker = false;
 
   @Input()
+  public optionsOverride: FormUtilitiesOptions;
+
+  @Input()
+  public options: FormUtilitiesOptions;
+
+  @Input()
   tips: Array<TipsOptions>;
 
   @Input()
@@ -70,9 +76,20 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   }
 
 
-  protected constructor(@Inject('options') protected _options: FormUtilitiesOptions) {}
+  protected constructor(@Inject('options') protected _options: FormUtilitiesOptions) {
+    this.options = Object.assign({}, _options);
+  }
 
   ngOnInit(): void {
+
+    /**
+     * Override default options
+     */
+    Object.assign(this.options, this.optionsOverride);
+
+    /**
+     * Subscribe to form errors
+     */
     this.formErrorServiceSubscription = this.formErrorService.propertyError.subscribe(error => {
       if (this.formControl && this.formControl.root) {
         const control = this.formControl.root.get(error.property_path);
@@ -106,10 +123,10 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
 
   get inputGroupClass(): string {
     if (this.prepend) {
-      return this._options.classFormInputGroup + ' ' + this._options.classFormInputGroup + '--prepend';
+      return this.options.classFormInputGroup + ' ' + this.options.classFormInputGroup + '--prepend';
     }
     if (this.append) {
-      return this._options.classFormInputGroup + ' ' + this._options.classFormInputGroup + '--append';
+      return this.options.classFormInputGroup + ' ' + this.options.classFormInputGroup + '--append';
     }
     return '';
   }
@@ -117,11 +134,6 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   private getErrorKey(propertyPath: string): string {
     return FormInputComponent.REMOTE_ERROR_PREFIX + propertyPath.split('.').pop();
   }
-
-  get options(): FormUtilitiesOptions {
-    return this._options;
-  }
-
 
   get focus(): boolean {
     return this._focus;
