@@ -1,8 +1,7 @@
 import { FormInputComponent } from '../form-input.component';
-import { ControlValueAccessor, DefaultValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { DefaultValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Component, forwardRef, Inject, Input, ViewChild } from '@angular/core';
 import { FormErrorService } from '../../services/form-error.service';
-import { CKEditorComponent } from 'ng2-ckeditor';
 import { FormUtilitiesOptions } from '../../form-utilities.module';
 
 
@@ -20,9 +19,6 @@ export class RteComponent extends FormInputComponent{
 
   @ViewChild(DefaultValueAccessor)
   input: DefaultValueAccessor;
-
-  @ViewChild(CKEditorComponent)
-  editor: CKEditorComponent;
 
   @Input()
   rteConfig: {} = {
