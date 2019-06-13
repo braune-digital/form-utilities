@@ -11,7 +11,7 @@
             (change)="onInputChange(inputEl.checked)"
             ngDefaultControl
           />
-          <span *ngIf="label">{{ label }}</span>
+          <span *ngIf="label; else customLabel">{{ label }}</span>
           <bd-form-required [required]="requiredMarker" *ngIf="requiredMarker"></bd-form-required>
           <bd-form-tips [tips]="tips" *ngIf="tips"></bd-form-tips>
           <ng-content select="[section=after-input]"></ng-content>
@@ -23,3 +23,6 @@
   <bd-form-help [label]="help" *ngIf="help"></bd-form-help>
 </div>
 
+<ng-template #customLabel>
+  <ng-content select="[section=custom-label]"></ng-content>
+</ng-template>
