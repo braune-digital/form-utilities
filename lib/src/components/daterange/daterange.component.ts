@@ -72,7 +72,8 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
   }
 
   handleOutputDates(event: any){
-
-    this.datesPicked.emit(event);
+    if(event){
+      this.datesPicked.emit(event);
+    }
   }
 }
