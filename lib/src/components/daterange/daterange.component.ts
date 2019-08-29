@@ -30,7 +30,7 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
   inputClass: string;
 
   @Input()
-  triggers = 'click focus';
+  triggers = 'click';
 
   @Input()
   placeholder = '';

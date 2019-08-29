@@ -27,7 +27,7 @@ export class DatepickerComponent extends FormInputComponent implements ControlVa
   inputClass: string;
 
   @Input()
-  triggers = 'click focus';
+  triggers = 'click';
 
   @Input()
   placeholder = '';

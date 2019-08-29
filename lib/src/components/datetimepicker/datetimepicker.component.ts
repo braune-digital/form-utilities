@@ -30,7 +30,7 @@ export class DatetimepickerComponent extends FormInputComponent implements Contr
   label: string;
 
   @Input()
-  triggers: string = 'click focus';
+  triggers: string = 'click';
 
   @Input()
   help: string;
