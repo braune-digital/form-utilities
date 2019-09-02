@@ -11,7 +11,7 @@ import {FormUtilitiesOptions} from '../form-utilities.module';
 })
 export class MaxLengthDirective implements AfterViewInit {
 
-  constructor(@Inject('options') protected _options:FormUtilitiesOptions, private renderer: Renderer2, private elementRef: ElementRef) {
+  constructor(@Inject('FormUtilitiesOptions') protected _options:FormUtilitiesOptions, private renderer: Renderer2, private elementRef: ElementRef) {
   }
 
   public ngAfterViewInit() {

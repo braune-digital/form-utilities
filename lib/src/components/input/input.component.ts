@@ -60,7 +60,7 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
   @Output()
   onIconClicked: EventEmitter<string> = new EventEmitter();
 
-  constructor(@Inject('options') protected _options: FormUtilitiesOptions, public formErrorService: FormErrorService) {
+  constructor(@Inject('FormUtilitiesOptions') protected _options: FormUtilitiesOptions, public formErrorService: FormErrorService) {
     super(_options);
   }
 

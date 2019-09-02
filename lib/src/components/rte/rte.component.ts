@@ -54,7 +54,7 @@ export class RteComponent extends FormInputComponent{
   onChange: (_: any) => void;
   onTouched: () => void;
 
-  constructor(@Inject('options') protected _options:FormUtilitiesOptions, public formErrorService: FormErrorService) {
+  constructor(@Inject('FormUtilitiesOptions') protected _options:FormUtilitiesOptions, public formErrorService: FormErrorService) {
     super(_options);
   }
 

@@ -21,7 +21,7 @@ export class FormAddonComponent {
   }
 
   public constructor(
-    @Inject('options') public _options: FormUtilitiesOptions,
+    @Inject('FormUtilitiesOptions') public _options: FormUtilitiesOptions,
     private _sanitizer: DomSanitizer
   ) {
   }

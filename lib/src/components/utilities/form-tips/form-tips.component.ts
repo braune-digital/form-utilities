@@ -12,7 +12,7 @@ export class FormTipsComponent {
   @Input()
   tips: Array<TipsOptions>;
 
-  public constructor(@Inject('options') public _options: FormUtilitiesOptions) {
+  public constructor(@Inject('FormUtilitiesOptions') public _options: FormUtilitiesOptions) {
   }
 
   get options(): FormUtilitiesOptions {

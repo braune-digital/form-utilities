@@ -9,7 +9,7 @@ export class SelectDirective implements OnInit {
   @Input()
   label: string;
 
-  constructor(@Inject('options') protected _options:FormUtilitiesOptions, private renderer: Renderer2, private elementRef: ElementRef) {
+  constructor(@Inject('FormUtilitiesOptions') protected _options:FormUtilitiesOptions, private renderer: Renderer2, private elementRef: ElementRef) {
   }
 
   ngOnInit(): void {

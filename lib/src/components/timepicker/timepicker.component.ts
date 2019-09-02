@@ -53,7 +53,7 @@ export class TimepickerComponent extends FormInputComponent implements ControlVa
   onChange: (_: any) => void;
   onTouched: () => void;
 
-  constructor(@Inject('options') protected _options: FormUtilitiesOptions, public formErrorService: FormErrorService, public langService: BsLocaleService) {
+  constructor(@Inject('FormUtilitiesOptions') protected _options: FormUtilitiesOptions, public formErrorService: FormErrorService, public langService: BsLocaleService) {
     super(_options);
   }
 

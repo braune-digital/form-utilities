@@ -59,7 +59,7 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
   @Output()
   datesPicked: EventEmitter<Date> = new EventEmitter();
 
-  constructor(@Inject('options') protected _options: FormUtilitiesOptions,
+  constructor(@Inject('FormUtilitiesOptions') protected _options: FormUtilitiesOptions,
               public formErrorService: FormErrorService,
               public langService: BsLocaleService
   ) {

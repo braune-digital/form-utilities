@@ -12,7 +12,7 @@ export class FormRequiredComponent {
   @Input() required: boolean;
 
   public constructor(
-    @Inject('options') public _options: FormUtilitiesOptions,
+    @Inject('FormUtilitiesOptions') public _options: FormUtilitiesOptions,
     private _sanitizer: DomSanitizer
   ) {
   }
