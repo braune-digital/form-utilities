@@ -19,7 +19,22 @@ export class FormErrorInterceptor implements HttpInterceptor {
             if (err.status === 400) {
               const errorObject = err.error;
               if (errorObject.errors && errorObject.errors.children) {
-                this.walkRecursive(errorObject.errors.children, []);
+                const flattedErrors = this.flatten(errorObject.errors);
+                const get = (p, o) =>
+                  p.reduce((xs, x) =>
+                    (xs && xs[x]) ? xs[x] : null, o);
+
+                Object.keys(flattedErrors).forEach(propertyPath => {
+                  /**
+                   * Remove .i from path
+                   */
+                  const splitted = propertyPath.split('.');
+                  splitted.pop();
+                  const pp = splitted.filter(_ => {
+                    return _ !== 'errors' && _ !== 'children';
+                  });
+                  this.formErrorService.propertyError.next({property_path: pp.join('.'), message: get(propertyPath.split('.'), errorObject.errors)});
+                });
               }
             }
           }
@@ -29,26 +44,31 @@ export class FormErrorInterceptor implements HttpInterceptor {
   }
 
   /**
-   * @param children
-   * @param keys
+   * @param object
+   * @param path
+   * @param res
    */
-  walkRecursive(children: any, keys: string[]): void {
-    const objectKeys = Object.keys(children);
-    objectKeys.forEach((key) => {
-      const property = children[key];
-      if (property.errors && property.errors.length > 0) {
-        property.errors.forEach((message: any) => {
-          const path = (keys.length) ? keys.join('.') + '.' + key : key;
-          this.formErrorService.propertyError.next({property_path: path, message: message});
-        });
-      }
-
-      keys.push(key);
-      if (property.children) {
-        this.walkRecursive(property.children, keys);
+  flatten(object, path = '', res = undefined) {
+    if (!Array.isArray(res)) {
+      res = [];
+    }
+    if (object !== null && typeof object === 'object') {
+      if (Array.isArray(object)) {
+        for (let i = 0; i < object.length; i++) {
+          this.flatten(object[i], path + '.' + i , res)
+        }
       } else {
-        keys.splice(keys.length - 1, 1);
+        const keys = Object.keys(object);
+        for (let i = 0; i < keys.length; i++) {
+          const key = keys[i];
+          this.flatten(object[key], path ? path + '.' + key : key, res)
+        }
       }
-    });
+    } else {
+      if (path) {
+        res[path] = object
+      }
+    }
+    return res
   }
 }
