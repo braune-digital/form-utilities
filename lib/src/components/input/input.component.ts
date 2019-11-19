@@ -28,6 +28,9 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
   placeholder = '';
 
   @Input()
+  autocomplete = '';
+
+  @Input()
   type = 'text';
 
   @Input()
