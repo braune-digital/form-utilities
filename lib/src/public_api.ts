@@ -5,7 +5,6 @@ export { InputComponent } from './components/input/input.component';
 export { DatepickerComponent } from './components/datepicker/datepicker.component';
 export { DaterangeComponent } from './components/daterange/daterange.component';
 export { TextareaComponent } from './components/textarea/textarea.component';
-export { CkeditorComponent } from './components/ckeditor/ckeditor.component';
 export { ProgressButtonComponent } from './components/progress-button/progress-button.component';
 
 // Directives

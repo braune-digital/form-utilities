@@ -10,7 +10,6 @@ import { FormErrorInterceptor } from './interceptors/form-error.interceptor';
 import { InputComponent } from './components/input/input.component';
 import { ProgressButtonComponent } from './components/progress-button/progress-button.component';
 import { TextareaComponent } from './components/textarea/textarea.component';
-import { CkeditorComponent } from './components/ckeditor/ckeditor.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
@@ -103,7 +102,6 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     DatepickerComponent,
     DaterangeComponent,
     TextareaComponent,
-    CkeditorComponent,
     RteComponent,
     SelectDirective,
     ProgressButtonComponent,
@@ -128,7 +126,6 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     DatepickerComponent,
     DaterangeComponent,
     TextareaComponent,
-    CkeditorComponent,
     RteComponent,
     SelectDirective,
     ProgressButtonComponent,
