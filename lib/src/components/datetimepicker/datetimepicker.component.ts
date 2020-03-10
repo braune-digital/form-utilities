@@ -7,7 +7,6 @@ import {BsDatepickerConfig, BsDaterangepickerDirective, BsLocaleService, DatePic
 import {Time} from 'ngx-bootstrap/timepicker/timepicker.models';
 
 @Component({
-  moduleId: module.id,
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => DatetimepickerComponent),
@@ -23,7 +22,7 @@ export class DatetimepickerComponent extends FormInputComponent implements Contr
   dateTime: {date: Date, time: Date};
   isDisabled: boolean;
 
-  @ViewChild(DatePickerComponent)
+  @ViewChild(DatePickerComponent, {static: true})
   dp: DatePickerComponent;
 
   @Input()

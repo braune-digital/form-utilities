@@ -11,7 +11,6 @@ import { FormUtilitiesOptions } from '../../form-utilities.module';
 import {noop} from 'rxjs';
 
 @Component({
-  moduleId: module.id,
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => CheckboxComponent),
@@ -21,7 +20,7 @@ import {noop} from 'rxjs';
   templateUrl: './checkbox.component.html'
 })
 export class CheckboxComponent extends FormInputComponent implements ControlValueAccessor {
-  @ViewChild(CheckboxControlValueAccessor)
+  @ViewChild(CheckboxControlValueAccessor, {static: true})
   input: CheckboxControlValueAccessor;
   @Input()
   label: string;

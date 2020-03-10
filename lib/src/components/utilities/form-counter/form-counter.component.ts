@@ -3,7 +3,6 @@ import {FormUtilitiesOptions} from '../../../form-utilities.module';
 import {FormControl} from '@angular/forms';
 
 @Component({
-  moduleId: module.id,
   selector: 'bd-form-counter',
   templateUrl: './form-counter.component.html'
 })

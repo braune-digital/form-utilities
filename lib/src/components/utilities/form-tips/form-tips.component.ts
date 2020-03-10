@@ -3,7 +3,6 @@ import {FormUtilitiesOptions} from '../../../form-utilities.module';
 import {TipsOptions} from '../models';
 
 @Component({
-  moduleId: module.id,
   selector: 'bd-form-tips',
   templateUrl: './form-tips.component.html'
 })

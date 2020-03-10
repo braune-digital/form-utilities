@@ -91,10 +91,10 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     ReactiveFormsModule,
     NgSelectModule,
     TranslateModule,
-    TooltipModule.forRoot(),
-    PopoverModule.forRoot(),
-    BsDatepickerModule.forRoot(),
-    TimepickerModule.forRoot(),
+    TooltipModule,
+    PopoverModule,
+    BsDatepickerModule,
+    TimepickerModule,
     TextareaAutosizeModule,
     QuillModule
   ],
@@ -150,7 +150,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
 })
 
 export class FormUtilitiesModule {
-  static forRoot(options: FormUtilitiesOptions = DefaultFormUtilitiesOptions): ModuleWithProviders {
+  static forRoot(options: FormUtilitiesOptions = DefaultFormUtilitiesOptions): ModuleWithProviders<FormUtilitiesModule> {
     return {
       ngModule: FormUtilitiesModule,
       providers: [

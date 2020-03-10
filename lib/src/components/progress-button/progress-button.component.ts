@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'bd-progress-button',
   templateUrl: './progress-button.component.html',
   styleUrls: ['./progress-button.component.scss']

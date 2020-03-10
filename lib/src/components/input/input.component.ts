@@ -5,7 +5,6 @@ import { FormErrorService } from '../../services/form-error.service';
 import { FormUtilitiesOptions } from '../../form-utilities.module';
 
 @Component({
-  moduleId: module.id,
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => InputComponent),
@@ -15,7 +14,8 @@ import { FormUtilitiesOptions } from '../../form-utilities.module';
   templateUrl: './input.component.html'
 })
 export class InputComponent extends FormInputComponent implements ControlValueAccessor {
-  @ViewChild(DefaultValueAccessor)
+
+  @ViewChild(DefaultValueAccessor, {static: true})
   input: DefaultValueAccessor;
 
   @Input()

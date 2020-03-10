@@ -6,7 +6,6 @@ import { FormUtilitiesOptions } from '../../form-utilities.module';
 import { BsDatepickerConfig, BsDaterangepickerDirective, BsLocaleService } from 'ngx-bootstrap';
 
 @Component({
-  moduleId: module.id,
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => DatepickerComponent),
@@ -17,7 +16,7 @@ import { BsDatepickerConfig, BsDaterangepickerDirective, BsLocaleService } from 
 })
 export class DatepickerComponent extends FormInputComponent implements ControlValueAccessor, OnInit {
 
-  @ViewChild(DefaultValueAccessor)
+  @ViewChild(DefaultValueAccessor, {static: true})
   input: DefaultValueAccessor;
 
   @Input()
@@ -39,7 +38,7 @@ export class DatepickerComponent extends FormInputComponent implements ControlVa
   bsValue: Date;
 
   @Input()
-  formControl: FormControl = new FormControl('');;
+  formControl: FormControl = new FormControl('');
 
   @Input()
   bsConfig: BsDatepickerConfig = new BsDatepickerConfig();
@@ -53,7 +52,7 @@ export class DatepickerComponent extends FormInputComponent implements ControlVa
   @Input()
   bsMinDate: Date = null;
 
-  @ViewChild('dp')
+  @ViewChild('dp', {static: false})
   datepicker: BsDaterangepickerDirective;
 
   constructor(@Inject('FormUtilitiesOptions') protected _options: FormUtilitiesOptions,

@@ -8,7 +8,6 @@ import { FormUtilitiesOptions } from '../../form-utilities.module';
  * @deprecated use rte component
  */
 @Component({
-  moduleId: module.id,
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => CkeditorComponent),
@@ -19,7 +18,7 @@ import { FormUtilitiesOptions } from '../../form-utilities.module';
 })
 export class CkeditorComponent extends FormInputComponent{
 
-  @ViewChild(DefaultValueAccessor)
+  @ViewChild(DefaultValueAccessor, {static: true})
   input: DefaultValueAccessor;
 
   @Input()

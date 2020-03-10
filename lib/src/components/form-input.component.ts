@@ -1,10 +1,11 @@
-import { Inject, Input, OnDestroy, OnInit } from '@angular/core';
+import { Inject, Input, OnDestroy, OnInit, Directive } from '@angular/core';
 import { ControlValueAccessor, FormControl } from '@angular/forms';
 import { FormErrorService } from '../services/form-error.service';
 import { FormUtilitiesOptions } from '../form-utilities.module';
 import {TipsOptions} from './utilities/models';
 import { Subscription } from 'rxjs';
 
+@Directive()
 export abstract class FormInputComponent implements OnInit, OnDestroy, ControlValueAccessor {
 
   static readonly REMOTE_ERROR_PREFIX = 'remote_';
@@ -106,6 +107,7 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   }
 
   writeValue(value: any): void {
+    console.log(this.input);
     this.input.writeValue(value);
   }
 

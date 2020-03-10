@@ -6,7 +6,6 @@ import { FormUtilitiesOptions } from '../../form-utilities.module';
 
 
 @Component({
-  moduleId: module.id,
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => RteComponent),
@@ -17,7 +16,7 @@ import { FormUtilitiesOptions } from '../../form-utilities.module';
 })
 export class RteComponent extends FormInputComponent{
 
-  @ViewChild(DefaultValueAccessor)
+  @ViewChild(DefaultValueAccessor, {static: true})
   input: DefaultValueAccessor;
 
   @Input()

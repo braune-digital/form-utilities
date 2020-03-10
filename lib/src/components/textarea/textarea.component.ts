@@ -5,7 +5,6 @@ import { FormErrorService } from '../../services/form-error.service';
 import { FormUtilitiesOptions } from '../../form-utilities.module';
 
 @Component({
-  moduleId: module.id,
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => TextareaComponent),
@@ -15,7 +14,7 @@ import { FormUtilitiesOptions } from '../../form-utilities.module';
   templateUrl: './textarea.component.html'
 })
 export class TextareaComponent extends FormInputComponent implements ControlValueAccessor {
-  @ViewChild(DefaultValueAccessor)
+  @ViewChild(DefaultValueAccessor, {static: true})
   input: DefaultValueAccessor;
 
   @Input()

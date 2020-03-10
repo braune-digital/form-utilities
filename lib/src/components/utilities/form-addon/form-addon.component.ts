@@ -3,7 +3,6 @@ import {FormUtilitiesOptions} from '../../../form-utilities.module';
 import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
-  moduleId: module.id,
   selector: 'bd-form-addon',
   templateUrl: './form-addon.component.html',
 })
