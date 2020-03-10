@@ -107,7 +107,6 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   }
 
   writeValue(value: any): void {
-    console.log(this.input);
     this.input.writeValue(value);
   }
 
