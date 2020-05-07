@@ -1,0 +1,21 @@
+<div class="{{ options.classFormGroup }}">
+  <div class="{{ options.classFromInput }}">
+    <div class="{{ inputGroupClass }}" [formGroup]="group">
+      <div class="checkbox" *ngFor="let option of radioOptions">
+        <label class="{{ options.classFormLabel }}">
+          <input
+            type="radio"
+            [value]="option.value"
+            formControlName="{{ fieldName }}"
+          />
+          <span>{{ option.label }}</span>
+        </label>
+      </div>
+      <bd-form-required [required]="requiredMarker" *ngIf="requiredMarker"></bd-form-required>
+      <bd-form-tips [tips]="tips" *ngIf="tips"></bd-form-tips>
+      <ng-content select="[section=after-input]"></ng-content>
+    </div>
+  </div>
+  <bd-form-errors [errors]="errors" *ngIf="errors"></bd-form-errors>
+  <bd-form-help [label]="help" *ngIf="help"></bd-form-help>
+</div>
