@@ -35,6 +35,7 @@ import { TimepickerComponent } from './components/timepicker/timepicker.componen
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { deLocale } from 'ngx-bootstrap/locale';
 import {FormLabelIconComponent} from './components/utilities/form-label-icon/form-label-icon.component';
+import {RadioComponent} from './components/radio/radio.component';
 
 defineLocale('de', deLocale);
 
@@ -107,6 +108,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     ProgressButtonComponent,
     CheckboxComponent,
     DatetimepickerComponent,
+    RadioComponent,
 
     MaxLengthDirective,
 
@@ -131,6 +133,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     ProgressButtonComponent,
     CheckboxComponent,
     DatetimepickerComponent,
+    RadioComponent,
 
     MaxLengthDirective,
 
