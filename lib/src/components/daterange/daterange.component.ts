@@ -3,7 +3,7 @@ import { ControlValueAccessor, DefaultValueAccessor, FormControl, NG_VALUE_ACCES
 import {Component, EventEmitter, forwardRef, Inject, Input, OnInit, Output, ViewChild} from '@angular/core';
 import { FormErrorService } from '../../services/form-error.service';
 import { FormUtilitiesOptions } from '../../form-utilities.module';
-import { BsDaterangepickerConfig, BsDaterangepickerDirective, BsLocaleService} from 'ngx-bootstrap';
+import {BsDaterangepickerConfig, BsDaterangepickerDirective, BsLocaleService} from "ngx-bootstrap/datepicker";
 
 @Component({
   providers: [{

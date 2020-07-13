@@ -1,13 +1,13 @@
-import { FormInputComponent } from '../form-input.component';
+import {FormInputComponent} from '../form-input.component';
 import {
   CheckboxControlValueAccessor,
-  ControlValueAccessor, DefaultValueAccessor,
+  ControlValueAccessor,
   FormControl,
   NG_VALUE_ACCESSOR
 } from '@angular/forms';
 import {Component, EventEmitter, forwardRef, Inject, Input, Output, ViewChild} from '@angular/core';
-import { FormErrorService } from '../../services/form-error.service';
-import { FormUtilitiesOptions } from '../../form-utilities.module';
+import {FormErrorService} from '../../services/form-error.service';
+import {FormUtilitiesOptions} from '../../form-utilities.module';
 import {noop} from 'rxjs';
 
 @Component({
@@ -44,7 +44,7 @@ export class CheckboxComponent extends FormInputComponent implements ControlValu
   @Input()
   isChecked = false;
 
-  constructor(@Inject('FormUtilitiesOptions') protected _options:FormUtilitiesOptions, public formErrorService: FormErrorService) {
+  constructor(@Inject('FormUtilitiesOptions') protected _options: FormUtilitiesOptions, public formErrorService: FormErrorService) {
     super(_options);
   }
 

@@ -1,10 +1,9 @@
 import { FormInputComponent } from '../form-input.component';
-import { ControlValueAccessor, DefaultValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Component, forwardRef, Inject, Input, OnInit, ViewChild } from '@angular/core';
 import { FormErrorService } from '../../services/form-error.service';
 import { FormUtilitiesOptions } from '../../form-utilities.module';
-import {BsDatepickerConfig, BsDaterangepickerDirective, BsLocaleService, DatePickerComponent} from 'ngx-bootstrap';
-import {Time} from 'ngx-bootstrap/timepicker/timepicker.models';
+import {BsDatepickerConfig, BsLocaleService, DatePickerComponent} from "ngx-bootstrap/datepicker";
 
 @Component({
   providers: [{

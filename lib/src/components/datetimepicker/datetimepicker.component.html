@@ -13,20 +13,20 @@
              [maxDate]="bsMaxDate"
              [triggers]="triggers"
              [bsValue]="dateTime.date"
-             [(ngModel)]="dateTime.date"
              [isDisabled]="disabled"
              [readonly]="disabled"
+             [(ngModel)]="dateTime.date"
              (ngModelChange)="onDateChange($event)"
       />
     </div>
     <div class="col-md-6 col-sm-12">
       <timepicker
-              [(ngModel)]="dateTime.time"
-              (ngModelChange)="onTimeChange($event)"
-              [showMeridian]="isMeridian"
-              [disabled]="disabled"
-              [readonlyInput]="isDisabled"
-              [showSpinners]="showSpinners"
+        [(ngModel)]="dateTime.time"
+        (ngModelChange)="onTimeChange($event)"
+        [showMeridian]="isMeridian"
+        [disabled]="disabled"
+        [readonlyInput]="isDisabled"
+        [showSpinners]="showSpinners"
       ></timepicker>
     </div>
   </div>

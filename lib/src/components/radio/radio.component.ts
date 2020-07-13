@@ -7,7 +7,6 @@ import { FormErrorService } from '../../services/form-error.service';
 import { FormUtilitiesOptions } from '../../form-utilities.module';
 
 @Component({
-  moduleId: module.id,
   selector: 'bd-radio',
   templateUrl: './radio.component.html'
 })

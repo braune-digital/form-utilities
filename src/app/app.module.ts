@@ -5,11 +5,12 @@ import { AppComponent } from './app.component';
 import { FormUtilitiesModule } from '../../lib/src/form-utilities.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
-import {PopoverModule, TooltipModule} from "ngx-bootstrap";
 import {BsDatepickerModule} from "ngx-bootstrap/datepicker";
 import {TimepickerModule} from "ngx-bootstrap/timepicker";
 import {QuillModule} from "ngx-quill";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {TooltipModule} from "ngx-bootstrap/tooltip";
+import {PopoverModule} from "ngx-bootstrap/popover";
 
 @NgModule({
   declarations: [
