@@ -1,6 +1,6 @@
 <div class="{{ options.classFormGroup }}" [ngClass]="{'has-errors': errors.length}">
   <bd-form-label [label]="label"></bd-form-label>
-
+  <bd-form-readonly-label *ngIf="readOnly"></bd-form-readonly-label>
   <div class="row">
     <div class="col-md-6 col-sm-12">
       <input #dp
@@ -16,6 +16,7 @@
              [isDisabled]="disabled"
              [readonly]="disabled"
              [(ngModel)]="dateTime.date"
+             [readonly]="readOnly"
              (ngModelChange)="onDateChange($event)"
       />
     </div>
@@ -25,7 +26,7 @@
         (ngModelChange)="onTimeChange($event)"
         [showMeridian]="isMeridian"
         [disabled]="disabled"
-        [readonlyInput]="isDisabled"
+        [readonlyInput]="isDisabled || readOnly"
         [showSpinners]="showSpinners"
       ></timepicker>
     </div>

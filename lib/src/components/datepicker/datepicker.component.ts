@@ -52,6 +52,9 @@ export class DatepickerComponent extends FormInputComponent implements ControlVa
   @Input()
   bsMinDate: Date = null;
 
+  @Input()
+  readOnly = false;
+
   @ViewChild('dp', {static: false})
   datepicker: BsDaterangepickerDirective;
 

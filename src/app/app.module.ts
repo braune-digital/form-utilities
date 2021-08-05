@@ -14,7 +14,7 @@ import {PopoverModule} from "ngx-bootstrap/popover";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

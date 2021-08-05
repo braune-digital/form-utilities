@@ -64,6 +64,9 @@ export class DatetimepickerComponent extends FormInputComponent implements Contr
   @Input()
   showSpinners = false;
 
+  @Input()
+  readOnly = false;
+
 
 
   onChange: (_: any) => void;

@@ -53,6 +53,9 @@ export abstract class FormInputComponent implements OnInit, OnDestroy, ControlVa
   @Input()
   disabled = false;
 
+  @Input()
+  readOnly = false;
+
   uniqueId =  '_' + Math.random().toString(36).substr(2, 9);
 
   private _focus: boolean;

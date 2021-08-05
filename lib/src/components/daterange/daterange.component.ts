@@ -52,6 +52,9 @@ export class DaterangeComponent extends FormInputComponent implements ControlVal
   @Input()
   bsMinDate: Date = null;
 
+  @Input()
+  readOnly = false;
+
   @ViewChild('dp', {static: false})
   daterange: BsDaterangepickerDirective;
 

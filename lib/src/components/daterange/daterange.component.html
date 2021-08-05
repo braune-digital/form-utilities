@@ -4,6 +4,7 @@
       <bd-form-label [label]="label" [inputId]="uniqueId"></bd-form-label>
       <bd-form-required [required]="requiredMarker" *ngIf="requiredMarker"></bd-form-required>
       <bd-form-tips [tips]="tips" *ngIf="tips"></bd-form-tips>
+      <bd-form-readonly-label *ngIf="readOnly"></bd-form-readonly-label>
     </div>
 
     <div class="{{ inputGroupClass }}">
@@ -21,6 +22,7 @@
              [attr.aria-label]="placeholder"
              [minDate]="bsMinDate"
              [maxDate]="bsMaxDate"
+             [readonly]="readOnly"
              (bsValueChange)="handleOutputDates($event)"
       >
       <bd-form-addon [text]="append" position="append" *ngIf="append"></bd-form-addon>

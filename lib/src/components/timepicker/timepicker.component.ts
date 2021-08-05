@@ -48,6 +48,9 @@ export class TimepickerComponent extends FormInputComponent implements ControlVa
   @Input()
   isMeridian = false;
 
+  @Input()
+  readOnly = false;
+
   onChange: (_: any) => void;
   onTouched: () => void;
 

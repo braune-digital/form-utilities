@@ -37,6 +37,7 @@ import {FormLabelIconComponent} from './components/utilities/form-label-icon/for
 import {RadioComponent} from './components/radio/radio.component';
 import {TooltipModule} from "ngx-bootstrap/tooltip";
 import {PopoverModule} from "ngx-bootstrap/popover";
+import { FormReadonlyLabelComponent } from './components/utilities/form-readonly-label/form-readonly-label.component';
 
 defineLocale('de', deLocale);
 
@@ -52,6 +53,7 @@ export interface FormUtilitiesOptions {
   classFromLegend?: string;
   classFormLabel?: string;
   classFormControl?: string;
+  classFormReadonly?: string,
   classFormCounter?: string;
   classFormError?: string;
   classFormHelp?: string;
@@ -60,6 +62,7 @@ export interface FormUtilitiesOptions {
   requiredString?: string;
   maxLengthString?: string;
   minLengthString?: string;
+  readonlyString?: string;
   counterBefore?: boolean;
 }
 
@@ -73,6 +76,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
   classFormInputGroupText: 'input-group-text',
   classFromLegend: 'form-legend',
   classFormLabel: 'form-label',
+  classFormReadonly: 'form-readonly',
   classFormControl: 'form-control',
   classFormCounter: 'form-counter',
   classFormError: 'form-errors',
@@ -82,6 +86,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
   requiredString: '*',
   maxLengthString: 'Noch %s Zeichen',
   minLengthString: 'Es fehlen noch %s Zeichen',
+  readonlyString: 'Readonly mode',
   counterBefore: true
 };
 
@@ -121,6 +126,7 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     FormRequiredComponent,
     FormCounterComponent,
     FormAddonComponent,
+    FormReadonlyLabelComponent,
     TimepickerComponent
   ],
   exports: [
@@ -146,7 +152,8 @@ export const DefaultFormUtilitiesOptions: FormUtilitiesOptions = {
     FormRequiredComponent,
     FormCounterComponent,
     FormAddonComponent,
-    TimepickerComponent
+    TimepickerComponent,
+    FormReadonlyLabelComponent,
   ],
 })
 
@@ -156,7 +163,7 @@ export class FormUtilitiesModule {
       ngModule: FormUtilitiesModule,
       providers: [
         FormErrorService,
-        { provide: 'FormUtilitiesOptions', useValue: options || DefaultFormUtilitiesOptions },
+        { provide: 'FormUtilitiesOptions', useValue: Object.assign({}, DefaultFormUtilitiesOptions, options) || DefaultFormUtilitiesOptions },
         {
           provide: HTTP_INTERCEPTORS,
           useClass: FormErrorInterceptor,

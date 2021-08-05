@@ -8,7 +8,7 @@
       <bd-form-required [required]="requiredMarker" *ngIf="requiredMarker"></bd-form-required>
       <bd-form-tips [tips]="tips" *ngIf="tips"></bd-form-tips>
       <bd-form-counter [maxLength]="maxLength" [form]="formControl" *ngIf="maxLength && options.counterBefore"></bd-form-counter>
-
+      <bd-form-readonly-label *ngIf="readOnly"></bd-form-readonly-label>
     </div>
 
     <div class="{{ inputGroupClass }}">
@@ -21,7 +21,7 @@
                 [attr.id]="uniqueId"
                 [attr.maxlength]="maxLength"
                 [attr.aria-label]="placeholder"
-                [readOnly]="formControl.disabled"
+                [readOnly]="formControl.disabled || readOnly"
                 ngDefaultControl>
       </textarea>
 

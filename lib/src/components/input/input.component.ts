@@ -45,6 +45,9 @@ export class InputComponent extends FormInputComponent implements ControlValueAc
   @Input()
   icon: string;
 
+  @Input()
+  readOnly = false;
+
   @Output()
   onInputKeypress: EventEmitter<string> = new EventEmitter();
 

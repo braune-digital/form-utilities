@@ -50,6 +50,9 @@ export class RteComponent extends FormInputComponent{
   @Input()
   formControl: FormControl;
 
+  @Input()
+  readOnly = false;
+
   onChange: (_: any) => void;
   onTouched: () => void;
 

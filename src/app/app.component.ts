@@ -11,6 +11,8 @@ export class AppComponent {
 
   form: FormGroup = null;
 
+  readonly = false;
+
   constructor(private _builder: FormBuilder) {
     this.form = this._builder.group({
       'descriptionCk': ['<p>CkEditor</p>', Validators.required],

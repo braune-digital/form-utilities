@@ -21,12 +21,16 @@
 
   <h1>Components Test</h1>
 
+  <div>
+    <button class="btn btn-primary" (click)="readonly = !readonly">Toogle readonly</button>
+  </div>
+
   <form [formGroup]="form" id="test" (submit)="onSubmit()">
 
     <h2>Input</h2>
 
     <h3>No Options</h3>
-    <bd-input [formControl]="form.get('input')"></bd-input>
+    <bd-input [formControl]="form.get('input')" [readOnly]="readonly"></bd-input>
 
     <h3>All Options</h3>
     <bd-input [formControl]="form.get('input')"
@@ -36,16 +40,19 @@
               maxLength="40"
               append="%"
               prepend="@example.com"
-              help="help text block">
+              help="help text block"
+              [readOnly]="readonly"
+              >
     </bd-input>
 
     <h2>Textarea</h2>w
 
     <h3>No Options</h3>
-    <bd-textarea [formControl]="form.get('descriptionTextarea')"></bd-textarea>
+    <bd-textarea [formControl]="form.get('descriptionTextarea')" [readOnly]="readonly"></bd-textarea>
 
     <h3>All Options</h3>
     <bd-textarea [formControl]="form.get('descriptionTextarea')"
+    [readOnly]="readonly"
                  [tips]="[{ 'icon': 'fa-video' }, {'icon': 'fa-info-circle', 'tooltip': 'das ist der tooltip' }, {'icon': 'fa-user', 'tooltip': 'das ist der tooltip' }]"
                  label="label"
                  required="true"
@@ -56,13 +63,13 @@
 
 
     <h3>Quill Editor</h3>
-    <bd-rte [formControl]="form.get('descriptionRTE')"></bd-rte>
+    <bd-rte [readOnly]="readonly" [formControl]="form.get('descriptionRTE')"></bd-rte>
 
     <h2>Dates</h2>
 
     <h3>Datepicker</h3>
-    <bd-datepicker [formControl]="form.get('datepicker')" label="Datepicker"></bd-datepicker>
-    <bd-datepicker [formControl]="form.get('datepicker')"
+    <bd-datepicker [readOnly]="readonly" [formControl]="form.get('datepicker')" label="Datepicker"></bd-datepicker>
+    <bd-datepicker [readOnly]="readonly" [formControl]="form.get('datepicker')"
                    [tips]="[{ 'icon': 'fa-video' }, {'icon': 'fa-info-circle', 'tooltip': 'das ist der tooltip' }]"
                    label="label"
                    required="true"
@@ -72,8 +79,8 @@
                    help="help text block"></bd-datepicker>
 
     <h3>Daterange</h3>
-    <bd-daterange [formControl]="form.get('daterange')"></bd-daterange>
-    <bd-daterange [formControl]="form.get('daterange')"
+    <bd-daterange [readOnly]="readonly" [formControl]="form.get('daterange')"></bd-daterange>
+    <bd-daterange [readOnly]="readonly" [formControl]="form.get('daterange')"
                   [tips]="[{ 'icon': 'fa-video' }, {'icon': 'fa-info-circle', 'tooltip': 'das ist der tooltip' }]"
                   label="label"
                   required="true"
@@ -83,8 +90,8 @@
                   help="help text block"></bd-daterange>
 
     <h3>Datetimepicker</h3>
-    <bd-datetimepicker [formControl]="form.get('datetimepicker')"></bd-datetimepicker>
-    <bd-datetimepicker [formControl]="form.get('datetimepicker')"
+    <bd-datetimepicker [readOnly]="readonly" [formControl]="form.get('datetimepicker')"></bd-datetimepicker>
+    <bd-datetimepicker [readOnly]="readonly" [formControl]="form.get('datetimepicker')"
                   [tips]="[{ 'icon': 'fa-video' }, {'icon': 'fa-info-circle', 'tooltip': 'das ist der tooltip' }]"
                   label="label"
                   required="true"

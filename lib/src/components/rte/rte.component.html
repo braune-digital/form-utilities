@@ -8,12 +8,12 @@
       <bd-form-required [required]="requiredMarker" *ngIf="requiredMarker"></bd-form-required>
       <bd-form-tips [tips]="tips" *ngIf="tips"></bd-form-tips>
       <bd-form-counter [maxLength]="maxLength" [form]="formControl" *ngIf="maxLength && options.counterBefore"></bd-form-counter>
-
+      <bd-form-readonly-label *ngIf="readOnly"></bd-form-readonly-label>
     </div>
 
     <div class="{{ inputGroupClass }}">
 
-      <quill-editor #editor [formControl]="formControl" [modules]="rteConfig"></quill-editor>
+      <quill-editor #editor [readOnly]="readOnly" [formControl]="formControl"  [modules]="rteConfig"></quill-editor>
 
     </div>
   </div>
